@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=B612&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
+}
+#pannellum {
+    position:relative;
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    height: 100vh;
+    
+}
+.content{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.content>i{
+    display: none;
+}
+#controls {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    text-align: right;
+    width: 100%;
+    padding-bottom: 3px;
+}
+.ctrl {
+    padding:4px;
+    width: 20px;
+    height: 15px;
+    text-align: center;
+    background: rgba(200, 200, 200, 0.8);
+    display: inline-block;
+    cursor: pointer;
+}
+.ctrl:hover {
+    background: rgba(200, 200, 200, 1);
+}
+.pnlm-controls-container{
+   display:none;
+}
+.pnlm-panorama-info .pnlm-title-box{
+  display: none;  
+}
+/* Destination */
+.locationPoint {
+    position:relative;
+    height: 40px;
+    width: auto;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 0.8em;
+    margin-right: 0.8em;
+    box-shadow: 2px 2px 10px rgba(0, 3, 3, 0.171);
+  }
+
+/* Destination end */
+.InputContainer {
+    position:relative;
+    height: 35px;
+    width: 25%;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 0.8em;
+    margin-right: 0.8em;
+    box-shadow: 2px 2px 10px rgba(5, 5, 5, 0.671);
+  }
+  
+  .input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    padding-left: 12px;
+    caret-color: rgb(255, 81, 0);
+  }
+  
+  .labelforsearch {
+    cursor: text;
+    padding: 0px 12px;
+  }
+  
+  .searchIcon {
+    width: 13px;
+  }
+  
+  .border {
+    margin-left: 0.7rem;
+    height: 40%;
+    width: 1.3px;
+    background-color: rgb(223, 223, 223);
+  }
+  
+  .fa-solid {
+    color: orangered;
+    width: 12px;
+  }
+  
+  .micButton {
+    padding: 0px 15px 0px 12px;
+    border: none;
+    background-color: transparent;
+    height: 40px;
+    cursor: pointer;
+    transition-duration: .3s;
+  }
+  
+  .searchIcon path {
+    fill: rgb(114, 114, 114);
+  }
+  
+  .micIcon path {
+    fill: rgb(255, 81, 0);
+  }
+  
+  .micButton:hover {
+    background-color: rgb(255, 230, 230);
+    transition-duration: .3s;
+  }
+
+
+  /* Sidebar */
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position:fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    overflow-x: scroll;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .titleHeading{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    content: "";
+    clear: both;
+    padding-left: 1rem ;
+    padding-right: 1rem;
+  }
+   .sidebar .titleHeading>h1{
+    font-family: "Poppins";
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-left: 1.6rem;
+    color:lightcoral;
+  }
+  .sidebar .titleHeading>.fa-solid{
+    font-size: 30px;
+    padding-right: 5px;
+  } 
+  .sidebar>.locationHeading{
+    position: relative;
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 12%;
+    text-align: center;
+  }
+  .sidebar .locationHeading>h1{
+    font-size: 20px;
+    color: lightsalmon;
+  }
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+  }
+  /* Navbar */
+  .topnav {
+    position:relative;
+    /* background-color:rgb(153, 0, 0,0.6); */
+    z-index: 111;
+    width: 50%;
+    margin-top: 12px;
+    margin-right: 6px;
+    height: 50px;
+    display:flex;
+    justify-content:center;
+    border-radius: 7px;
+    /* box-shadow: 0px 0px 5px rgb(255,255,255,0.6); */
+  }
+  .topnav a>.fa-solid,.dropbtn>.fa-solid{
+    color:rgb(252, 252, 252);
+  }
+  .topnav .active>i{
+    display: inline-block;
+    margin-right:10px;
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    
+  }
+  
+  .topnav .active {
+    width: auto;
+    border-radius: 8px;
+    color:rgb(255, 255, 255);
+    /* background-color: orangered; */
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 14px;    
+    border: none;
+    outline: none;
+    color: rgb(254, 254, 254);
+    text-shadow: 0 0 1px black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(114, 114, 114,0.5);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color:white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+   
+  .topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: orangered;
+    color: white;
+  }
+   
+   .dropdown-content a:hover {
+    background-color:orangered;
+    color:white;
+  }
+   
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+   
+  .miniMap{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+  
+    z-index: 100;
+    top: 220px;
+    margin: 0;
+  }
+  .miniMap>img{
+    width: 70%;
+    height: 270px;
+    image-resolution: 1000px;
+    border: 2px solid rgba(255, 255, 255, 0.448);
+    background-color: #81818155;
+  }
