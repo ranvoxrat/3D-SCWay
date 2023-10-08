@@ -2,9 +2,9 @@
 @section('title', 'Dashboard')
 @section('content')
 <div class="content-wrapper">
-          <div class="page-header">
+          <div class="page-header p-0">
             <h3 class="page-title">
-              <span class="page-title-icon bg-gradient-danger text-white ">
+              <span class="page-title-icon bg-danger text-white ">
                 <i class="mdi mdi-home"></i>
               </span> Dashboard
             </h3>

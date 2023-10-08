@@ -40,7 +40,7 @@ class HotspotController extends Controller
             'targetScene' => $request['targetScene']
         ]);
         
-        return redirect()->route('config')->with('success', 'Hotspot Berhasil Ditambahkan');
+        return redirect()->route('config')->with('success', 'Hotspot Add Successfully');
     }
     public function addHotspt(){
         $scene = Scene::all();
@@ -75,7 +75,7 @@ class HotspotController extends Controller
             'targetScene' => $request['targetScene']
         ]);
         
-        return redirect()->route('config')->with(['success' => 'Hotspot Berhasil Diubah']);
+        return redirect()->route('config')->with(['success' => 'Update Hotspot Successfully']);
     }
 
     /**
@@ -99,6 +99,6 @@ class HotspotController extends Controller
     public function destroy($id)
     {
         Hotspot::destroy($id);
-        return redirect()->route('config')->with('success','Hotspot Berhasil Dihapus');
+        return redirect()->route('config')->with('success','Hotspot Deleted Successfully');
     }
 }

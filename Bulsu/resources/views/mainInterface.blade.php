@@ -66,7 +66,7 @@
             <h1>Description</h1>
         </div>
     </div>
-    <div id="main">
+    <div id="main ">
         <div id="pannellum">
             <div id="controls">
                 <div class="ctrl" id="zoom-in">&plus;</div>
@@ -89,18 +89,7 @@
                     <div class="border"></div>
                     <button class="micButton"><i class="fa-solid fa-location-arrow"></i></button>
                 </div>
-                <div class="sliderWrap">
-        <ul>
-            <li class="info">
-                <i class="fa fa-map" aria-hidden="true"></i>
-                    <div class="sliderBar">
-                        <a onclick="showModal()">
-                            <p> Denah Kampus </p>
-                        </a>
-                    </div>
-            </li>
-        </ul>
-    </div>
+         
                 <!-- navbar -->
                 <div class="topnav" id="myTopnav">
                     <a href="{{ route('welcome')}}" class="active"><i class="fa-solid fa-house"></i>Home</a>
@@ -108,10 +97,10 @@
                         <button class="dropbtn"><i class="fa-solid fa-building"></i> A
                             <i class="fa fa-caret-down"></i>
                         </button>
-                        <div class="dropdown-content">
-                        @foreach($scenes as $scene)
-                             <li><a class="smoothscroll" onclick="loadScene({{$scene->id}})" >{{$scene->title}}</a></li>
-                        @endforeach	
+                        <div class="dropdown-content"> 
+                        @foreach ($scenes as $scene)                                                     
+                                 <li><a class="smoothscroll" onclick="loadScene({{$scene->id}})" >{{$scene->title}}</a></li>
+                        @endforeach
                         </div>
                     </div>
                     <div class="dropdown">
@@ -212,19 +201,47 @@
 
                     <a href="javascript:void(0);" style="font-size:15px;" class="icon"
                         onclick="myFunction()">&#9776;</a>
+                </div> 
+               <div class="minimap">
+
+               </div>
+            </div>
+     <div class="miniMap">
+        <ul>
+            <li class="info">
+                <i class="fa fa-map fw-bold" aria-hidden="true"></i>
+                    <div class="sliderBar">
+                        <a onclick="showModal()">
+                            <p>BulSu-SC</p>
+                        </a>
+                    </div>
+            </li>
+        </ul>
+    </div>
+    <div class="modal fade" id="denahModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{{asset('/img/Main_2.png')}}" id="map">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+        </div>
+        
+    </div>
     <!-- Java Script --> 
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
+ 
     <script>
         var load = pannellum.viewer('pannellum', {
             "default": {
                 "firstScene": "{{$fscene->id}}",
-                "title": "",
+                "author": "mark feliciano",
                 "autoLoad":true,
                 "sceneFadeDuration": 2000,
                 "autoRotate": -1,
@@ -238,19 +255,24 @@
                     "hfov": {{$scene->hfov}},
                     "pitch": {{$scene->pitch}},
                     "yaw": {{$scene->yaw}},
+                    "horizonPitch": {{$scene->horizonPitch}},
+                    "horizonRoll": {{$scene->horizonRoll}},
                     "type": "{{$scene->type}}",
                     "panorama": "{{asset('/img/uploads/' . $scene->image)}}",
-
-                    "hotSpots": [@foreach ($hotspots->where('sourceScene', $scene->id) as $hotspot)
+                    "hotSpots": [
+                        @foreach ($hotspots->where('sourceScene', $scene->id) as $hotspot)
                         {
                             "pitch": "{{$hotspot->pitch}}",
                             "yaw": "{{$hotspot->yaw}}",
                             "type": "{{$hotspot->type}}",
                             "text": "{{$hotspot->info}}",
+                            "horizonPitch": "{{$scene->horizonPitch}}",
+                            "horizonRoll":"{{$scene->horizonRoll}}",
                             @if($hotspot->type == "scene")
                                 "sceneId": "{{$hotspot->targetScene}}"
                             @endif
-                        }, @endforeach
+                        },
+                        @endforeach
                     ]
                 }, @endforeach
             }
@@ -277,7 +299,7 @@
     <script src="{{asset('js/off-canvas.js')}}"></script>
     <script src="{{asset('js/hoverable-collapse.js')}}"></script>
     <script src="{{asset('js/misc.js')}}"></script>
-    <script src="{{asset('js/dashboard.js')}}"></script>
+    // <script src="{{asset('js/dashboard.js')}}"></script>
     <script src="{{asset('js/todolist.js')}}"></script>
   </body>
 </html>

@@ -705,39 +705,7 @@ header .header-logo  {
 /* ------------------------------------------------------------------- 
  * off-canvas menu - (_layout.scss) 
  * ------------------------------------------------------------------- */
-.sliderWrap {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translate(-50%, -50%);
-  z-index: 700;
-} 
 
-.sliderWrap ul {
-  list-style: none;
-} 
-
-.sliderWrap ul li {
-  width: 35px;
-  height: 35px;
-  position: relative;
-  margin: 10px 0;
-  cursor: pointer;
-  border-radius: 3px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-} 
-.sliderWrap ul li .fa {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  color: #fff;
-} 
-
-.sliderWrap ul li.info{
-  background: #000000a1;
-} 
 
 .sliderBar{
   position: absolute;

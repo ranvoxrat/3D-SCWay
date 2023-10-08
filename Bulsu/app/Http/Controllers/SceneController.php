@@ -21,6 +21,7 @@ class SceneController extends Controller
         $hotspots = Hotspot::all();
         return view('admin.config', compact('hotspots', 'scene'));
     }
+   
    public function Welcome(){
     return view('welcome');
    }
@@ -144,8 +145,10 @@ public function addSceneCampus(){
             'title' => 'required|max:255',
             'type' => 'required',
             'hfov' => 'required|min:-360|max:360',
-            'yaw' => 'required|min:-360|max:360',
             'pitch' => 'required|min:-360|max:360',
+            'yaw' => 'required|min:-360|max:360',
+            'horizonRoll' => 'required|min:-360|max:360',
+            'horizonPitch' => 'required|min:-360|max:360',
             'image' => 'image'
         ]);
 
@@ -162,12 +165,14 @@ public function addSceneCampus(){
             'title' => $request['title'],
             'type' => $request['type'],
             'hfov' => $request['hfov'],
-            'yaw' => $request['yaw'],
             'pitch' => $request['pitch'],
+            'yaw' => $request['yaw'],
+            'horizonRoll' => $request['horizonRoll'],
+            'horizonPitch' => $request['horizonPitch'],
             'image' => $file_name
         ]);
         
-        return redirect()->route('config')->with('success', 'Scene Berhasil Diubah');
+        return redirect()->route('config')->with('success', 'Scene Updated Successfully');
     }
 
     public function status(Request $request, $id){
@@ -177,7 +182,7 @@ public function addSceneCampus(){
             'status' => $request['check']
         ]);
 
-        return redirect()->route('config')->with('success', 'Scene Utama Berhasil Diubah');
+        return redirect()->route('config')->with('success', 'Main scene successfully changed');
     }
     /**
      * Remove the specified resource from storage.
@@ -188,6 +193,6 @@ public function addSceneCampus(){
     public function destroy($id)
     {
         Scene::destroy($id);
-        return redirect()->route('config')->with('success','Scene Berhasil Dihapus');
+        return redirect()->route('config')->with('success','Scene Deleted Successfuly!');
     }
 }

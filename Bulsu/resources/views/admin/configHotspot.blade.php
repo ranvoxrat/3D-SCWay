@@ -14,6 +14,7 @@
     </div>
 @endif
 <div class="content-wrapper">
+    @include('sweetalert::alert')
     @include('admin.dataHotspot')
 </div>
 @endsection
@@ -125,9 +126,4 @@
     oTable.fnFilter($(this).val());
 });
     </script> -->
-    <script>
-$(document).ready(function() {
-    $('#example').dataTable();
-} );
-    </script>
 @endpush

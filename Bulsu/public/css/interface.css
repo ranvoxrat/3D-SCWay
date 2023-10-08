@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    
 }
 .content>i{
     display: none;
@@ -45,8 +46,11 @@
 .pnlm-controls-container{
    display:none;
 }
-.pnlm-panorama-info .pnlm-title-box{
+.pnlm-panorama-info{
   display: none;  
+}
+.pnlm-author-box{
+  display: none!important;
 }
 /* Destination */
 .locationPoint {
@@ -223,12 +227,12 @@
     position:relative;
     /* background-color:rgb(153, 0, 0,0.6); */
     z-index: 111;
-    width: 50%;
+    width: 100%;
     margin-top: 12px;
     margin-right: 6px;
     height: 50px;
     display:flex;
-    justify-content:center;
+    justify-content:flex-end;
     border-radius: 7px;
     /* box-shadow: 0px 0px 5px rgb(255,255,255,0.6); */
   }
@@ -311,13 +315,14 @@
   }
    
   .miniMap{
-    position: relative;
+    position:absolute;
     display: flex;
     justify-content: flex-start;
-  
-    z-index: 100;
-    top: 220px;
-    margin: 0;
+    visibility: visible!important;
+    z-index: 1000;
+    top: 300px;
+    left: 20px;
+    transform: translate(-50%, -50%);
   }
   .miniMap>img{
     width: 70%;
@@ -325,4 +330,42 @@
     image-resolution: 1000px;
     border: 2px solid rgba(255, 255, 255, 0.448);
     background-color: #81818155;
+  }
+
+  .sliderWrap {
+    position: absolute;
+    top: 50%;
+   
+    z-index: 700;
+  } 
+  
+  .miniMap ul {
+    list-style: none;
+  } 
+  
+  .miniMap ul li {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  } 
+  .miniMap ul li .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #fff;
+  } 
+  
+  .miniMap ul li.info{
+    background: #000000a1;
+  } 
+  #map{
+    position: relative;
+    width: 40%!important;
+    background-color:transparent black;
   }

@@ -51,7 +51,7 @@
 
     <section id="home" class="header_area">
         <div id="header_navbar" class="header_navbar">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
@@ -91,7 +91,7 @@
         </div>
         <div class="header_hero">
             <!-- -->
-            <div class="single_hero bg_cover d-flex align-items-center"
+            <div class="single_hero bg_cover d-flex align-items-center bg-danger"
                 style="background-image: url(img/background12.jpeg);">
                 <div class="container">
                     <div class="row justify-content-center align-items-center">
@@ -128,7 +128,7 @@
     <section id="features" class="features_area pt-120">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-12 p-6">
                     <div class="section_title text-center pb-25">
                         <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">3D SC-Way Offers
                         </h4>

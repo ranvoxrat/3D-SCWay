@@ -1,6 +1,6 @@
 <ul class="nav">
           <li class="nav-item nav-profile">
-            <a href="#" class="nav-link">
+            <a href="{{ route('profil') }}" class="nav-link">
               <div class="nav-profile-image">
                 <img src="{{asset('img/faces/mark.png')}}" alt="profile">
                 <span class="login-status online"></span>
@@ -36,7 +36,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item  {{ Request::routeIs('addHotspots') ? 'active' : '' }}">
+          <!-- <li class="nav-item  {{ Request::routeIs('addHotspots') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('addHotspots')}}">
               <span class="menu-title">Hotspot</span>
               <i class="fa-solid fa-location menu-icon"></i>
@@ -47,7 +47,7 @@
               <span class="menu-title">Scene</span>
               <i class="fa-solid fa-location menu-icon"></i>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#buidlings" aria-expanded="false"
               aria-controls="Accounts">
