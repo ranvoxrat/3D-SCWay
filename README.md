@@ -23,7 +23,6 @@ Please check the official laravel installation guide for server requirements bef
 Assuming you've already installed on your machine: PHP (>= 8.0), [Composer](https://getcomposer.org/), and local web server
 =======
 Assuming you've already installed on your machine: PHP (>= 7.3.0), [Composer](https://getcomposer.org/), and local web server
->>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 
 ## Installation
 
