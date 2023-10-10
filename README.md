@@ -19,9 +19,6 @@ This is my thesis project, created a virtual tour of my campus using [Pannellum]
 ## Getting started
 
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/8.x/deployment#server-requirements)
-
-Assuming you've already installed on your machine: PHP (>= 8.0), [Composer](https://getcomposer.org/), and local web server
-=======
 Assuming you've already installed on your machine: PHP (>= 7.3.0), [Composer](https://getcomposer.org/), and local web server
 
 ## Installation
