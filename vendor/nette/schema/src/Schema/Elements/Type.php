@@ -182,6 +182,7 @@ final class Type implements Schema
 
 		$this->doDeprecation($context);
 
+<<<<<<< HEAD
 		if (!$this->doValidate($value, $this->type, $context)
 			|| !$this->doValidateRange($value, $this->range, $context, $this->type)
 		) {
@@ -195,10 +196,22 @@ final class Type implements Schema
 				['value' => $value, 'pattern' => $this->pattern]
 			);
 			return;
+=======
+		$isOk = $context->createChecker();
+		Helpers::validateType($value, $this->type, $context);
+		$isOk() && Helpers::validateRange($value, $this->range, $context, $this->type);
+		$isOk() && $value !== null && $this->pattern !== null && Helpers::validatePattern($value, $this->pattern, $context);
+		$isOk() && is_array($value) && $this->validateItems($value, $context);
+		$isOk() && $merge && $value = Helpers::merge($value, $this->default);
+		$isOk() && $value = $this->doTransform($value, $context);
+		if (!$isOk()) {
+			return null;
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 		}
 
 		if ($value instanceof DynamicParameter) {
 			$expected = $this->type . ($this->range === [null, null] ? '' : ':' . implode('..', $this->range));
+<<<<<<< HEAD
 			$context->dynamics[] = [$value, str_replace(DynamicParameter::class . '|', '', $expected)];
 		}
 
@@ -226,5 +239,29 @@ final class Type implements Schema
 		}
 
 		return $this->doFinalize($value, $context);
+=======
+			$context->dynamics[] = [$value, str_replace(DynamicParameter::class . '|', '', $expected), $context->path];
+		}
+		return $value;
+	}
+
+
+	private function validateItems(array &$value, Context $context): void
+	{
+		if (!$this->itemsValue) {
+			return;
+		}
+
+		$res = [];
+		foreach ($value as $key => $val) {
+			$context->path[] = $key;
+			$context->isKey = true;
+			$key = $this->itemsKey ? $this->itemsKey->complete($key, $context) : $key;
+			$context->isKey = false;
+			$res[$key] = $this->itemsValue->complete($val, $context);
+			array_pop($context->path);
+		}
+		$value = $res;
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 	}
 }

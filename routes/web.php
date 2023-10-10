@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< HEAD
 
+=======
+use App\Scene;
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,4 +54,8 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/', 'SceneController@Welcome')->name('welcome');
+<<<<<<< HEAD
 Route::get('/interface', 'MainInterfaceController@interface')->name('mainpage');
+=======
+Route::get('/interface', 'MainInterfaceController@interface')->name('mainpage');
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8

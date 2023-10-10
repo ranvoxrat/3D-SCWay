@@ -80,6 +80,18 @@ final class AnyOf implements Schema
 
 	public function complete($value, Context $context)
 	{
+<<<<<<< HEAD
+=======
+		$isOk = $context->createChecker();
+		$value = $this->findAlternative($value, $context);
+		$isOk() && $value = $this->doTransform($value, $context);
+		return $isOk() ? $value : null;
+	}
+
+
+	private function findAlternative($value, Context $context)
+	{
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 		$expecteds = $innerErrors = [];
 		foreach ($this->set as $item) {
 			if ($item instanceof Schema) {
@@ -88,7 +100,11 @@ final class AnyOf implements Schema
 				$res = $item->complete($item->normalize($value, $dolly), $dolly);
 				if (!$dolly->errors) {
 					$context->warnings = array_merge($context->warnings, $dolly->warnings);
+<<<<<<< HEAD
 					return $this->doFinalize($res, $context);
+=======
+					return $res;
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 				}
 
 				foreach ($dolly->errors as $error) {
@@ -100,7 +116,11 @@ final class AnyOf implements Schema
 				}
 			} else {
 				if ($item === $value) {
+<<<<<<< HEAD
 					return $this->doFinalize($value, $context);
+=======
+					return $value;
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 				}
 
 				$expecteds[] = Nette\Schema\Helpers::formatValue($item);

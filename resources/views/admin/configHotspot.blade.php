@@ -14,6 +14,10 @@
     </div>
 @endif
 <div class="content-wrapper">
+<<<<<<< HEAD
+=======
+    @include('sweetalert::alert')
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     @include('admin.dataHotspot')
 </div>
 @endsection
@@ -125,9 +129,12 @@
     oTable.fnFilter($(this).val());
 });
     </script> -->
+<<<<<<< HEAD
     <script>
 $(document).ready(function() {
     $('#example').dataTable();
 } );
     </script>
+=======
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 @endpush

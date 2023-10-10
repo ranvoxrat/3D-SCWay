@@ -30,12 +30,23 @@
     26 => 'Laravel\\Ui\\UiServiceProvider',
     27 => 'Carbon\\Laravel\\ServiceProvider',
     28 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+<<<<<<< HEAD
     29 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     30 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     31 => 'App\\Providers\\AppServiceProvider',
     32 => 'App\\Providers\\AuthServiceProvider',
     33 => 'App\\Providers\\EventServiceProvider',
     34 => 'App\\Providers\\RouteServiceProvider',
+=======
+    29 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    30 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    31 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    32 => 'App\\Providers\\AppServiceProvider',
+    33 => 'App\\Providers\\AuthServiceProvider',
+    34 => 'App\\Providers\\EventServiceProvider',
+    35 => 'App\\Providers\\RouteServiceProvider',
+    36 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
   ),
   'eager' => 
   array (
@@ -55,12 +66,23 @@
     13 => 'Laravel\\Ui\\UiServiceProvider',
     14 => 'Carbon\\Laravel\\ServiceProvider',
     15 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+<<<<<<< HEAD
     16 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     17 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     18 => 'App\\Providers\\AppServiceProvider',
     19 => 'App\\Providers\\AuthServiceProvider',
     20 => 'App\\Providers\\EventServiceProvider',
     21 => 'App\\Providers\\RouteServiceProvider',
+=======
+    16 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    17 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    18 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    19 => 'App\\Providers\\AppServiceProvider',
+    20 => 'App\\Providers\\AuthServiceProvider',
+    21 => 'App\\Providers\\EventServiceProvider',
+    22 => 'App\\Providers\\RouteServiceProvider',
+    23 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
   ),
   'deferred' => 
   array (

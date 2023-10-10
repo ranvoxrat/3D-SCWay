@@ -2,9 +2,15 @@
 @section('title', 'Dashboard')
 @section('content')
 <div class="content-wrapper">
+<<<<<<< HEAD
           <div class="page-header">
             <h3 class="page-title">
               <span class="page-title-icon bg-gradient-danger text-white ">
+=======
+          <div class="page-header p-0">
+            <h3 class="page-title">
+              <span class="page-title-icon bg-danger text-white ">
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                 <i class="mdi mdi-home"></i>
               </span> Dashboard
             </h3>

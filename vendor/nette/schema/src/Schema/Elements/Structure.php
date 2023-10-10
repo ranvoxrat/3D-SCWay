@@ -40,7 +40,11 @@ final class Structure implements Schema
 	{
 		(function (Schema ...$items) {})(...array_values($items));
 		$this->items = $items;
+<<<<<<< HEAD
 		$this->castTo = 'object';
+=======
+		$this->castTo('object');
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 		$this->required = true;
 	}
 
@@ -153,6 +157,7 @@ final class Structure implements Schema
 
 		$this->doDeprecation($context);
 
+<<<<<<< HEAD
 		if (!$this->doValidate($value, 'array', $context)
 			|| !$this->doValidateRange($value, $this->range, $context)
 		) {
@@ -160,6 +165,19 @@ final class Structure implements Schema
 		}
 
 		$errCount = count($context->errors);
+=======
+		$isOk = $context->createChecker();
+		Helpers::validateType($value, 'array', $context);
+		$isOk() && Helpers::validateRange($value, $this->range, $context);
+		$isOk() && $this->validateItems($value, $context);
+		$isOk() && $value = $this->doTransform($value, $context);
+		return $isOk() ? $value : null;
+	}
+
+
+	private function validateItems(array &$value, Context $context): void
+	{
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 		$items = $this->items;
 		if ($extraKeys = array_keys(array_diff_key($value, $items))) {
 			if ($this->otherItems) {
@@ -190,12 +208,15 @@ final class Structure implements Schema
 
 			array_pop($context->path);
 		}
+<<<<<<< HEAD
 
 		if (count($context->errors) > $errCount) {
 			return;
 		}
 
 		return $this->doFinalize($value, $context);
+=======
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 	}
 
 

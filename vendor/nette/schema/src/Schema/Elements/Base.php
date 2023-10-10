@@ -11,6 +11,10 @@ namespace Nette\Schema\Elements;
 
 use Nette;
 use Nette\Schema\Context;
+<<<<<<< HEAD
+=======
+use Nette\Schema\Helpers;
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 
 
 /**
@@ -27,11 +31,16 @@ trait Base
 	/** @var callable|null */
 	private $before;
 
+<<<<<<< HEAD
 	/** @var array[] */
 	private $asserts = [];
 
 	/** @var string|null */
 	private $castTo;
+=======
+	/** @var callable[] */
+	private $transforms = [];
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 
 	/** @var string|null */
 	private $deprecated;
@@ -60,15 +69,39 @@ trait Base
 
 	public function castTo(string $type): self
 	{
+<<<<<<< HEAD
 		$this->castTo = $type;
+=======
+		return $this->transform(Helpers::getCastStrategy($type));
+	}
+
+
+	public function transform(callable $handler): self
+	{
+		$this->transforms[] = $handler;
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 		return $this;
 	}
 
 
 	public function assert(callable $handler, ?string $description = null): self
 	{
+<<<<<<< HEAD
 		$this->asserts[] = [$handler, $description];
 		return $this;
+=======
+		$expected = $description ?: (is_string($handler) ? "$handler()" : '#' . count($this->transforms));
+		return $this->transform(function ($value, Context $context) use ($handler, $description, $expected) {
+			if ($handler($value)) {
+				return $value;
+			}
+			$context->addError(
+				'Failed assertion ' . ($description ? "'%assertion%'" : '%assertion%') . ' for %label% %path% with value %value%.',
+				Nette\Schema\Message::FailedAssertion,
+				['value' => $value, 'assertion' => $expected]
+			);
+		});
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 	}
 
 
@@ -115,6 +148,7 @@ trait Base
 	}
 
 
+<<<<<<< HEAD
 	private function doValidate($value, string $expected, Context $context): bool
 	{
 		if (!Nette\Utils\Validators::is($value, $expected)) {
@@ -197,4 +231,42 @@ trait Base
 
 		return $value;
 	}
+=======
+	private function doTransform($value, Context $context)
+	{
+		$isOk = $context->createChecker();
+		foreach ($this->transforms as $handler) {
+			$value = $handler($value, $context);
+			if (!$isOk()) {
+				return null;
+			}
+		}
+		return $value;
+	}
+
+
+	/** @deprecated use Nette\Schema\Validators::validateType() */
+	private function doValidate($value, string $expected, Context $context): bool
+	{
+		$isOk = $context->createChecker();
+		Helpers::validateType($value, $expected, $context);
+		return $isOk();
+	}
+
+
+	/** @deprecated use Nette\Schema\Validators::validateRange() */
+	private static function doValidateRange($value, array $range, Context $context, string $types = ''): bool
+	{
+		$isOk = $context->createChecker();
+		Helpers::validateRange($value, $range, $context, $types);
+		return $isOk();
+	}
+
+
+	/** @deprecated use doTransform() */
+	private function doFinalize($value, Context $context)
+	{
+		return $this->doTransform($value, $context);
+	}
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 }

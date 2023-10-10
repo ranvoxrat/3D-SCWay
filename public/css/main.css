@@ -705,6 +705,7 @@ header .header-logo  {
 /* ------------------------------------------------------------------- 
  * off-canvas menu - (_layout.scss) 
  * ------------------------------------------------------------------- */
+<<<<<<< HEAD
 .sliderWrap {
   position: absolute;
   top: 50%;
@@ -738,6 +739,9 @@ header .header-logo  {
 .sliderWrap ul li.info{
   background: #000000a1;
 } 
+=======
+
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 
 .sliderBar{
   position: absolute;

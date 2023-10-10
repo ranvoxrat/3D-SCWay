@@ -16,12 +16,21 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="{{asset('fontawesome-free-6.4.0-web/css/all.min.css')}}" />
         <link rel="stylesheet" href="{{asset('fontawesome-free-6.4.0-web/css/fontawesome.min.css')}}">
+<<<<<<< HEAD
         
         {{-- Css --}}
         <link rel="stylesheet" href="{{asset('css/base.css')}}">
         <link rel="stylesheet" href="{{asset('css/vendor.css')}}">  
         <!-- <link rel="stylesheet" href="{{asset('css/main.css')}}">  -->
         
+=======
+
+        {{-- Css --}}
+        <link rel="stylesheet" href="{{asset('css/base.css')}}">
+        <link rel="stylesheet" href="{{asset('css/vendor.css')}}">
+        <!-- <link rel="stylesheet" href="{{asset('css/main.css')}}">  -->
+
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
         <!-- Jquery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- Bootstrap -->
@@ -33,7 +42,11 @@
         {{-- Pannellum--}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
         <!-- Fading Out Overlay -->
         <script>
             $(document).ready(function(){
@@ -43,6 +56,7 @@
             });
         </script>
     </head>
+<<<<<<< HEAD
     
     <body>
      <div id="mySidebar" class="sidebar">
@@ -67,6 +81,12 @@
         </div>
     </div>
     <div id="main">
+=======
+
+    <body>
+    
+    <div id="main ">
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
         <div id="pannellum">
             <div id="controls">
                 <div class="ctrl" id="zoom-in">&plus;</div>
@@ -78,7 +98,11 @@
                 <!-- search -->
                 <div class="InputContainer" id="searchGroup">
                     <button class="openbtn" onclick="openNav()"><i class="fa-solid fa-bars"></i></button>
+<<<<<<< HEAD
                     <input type="text" name="text" class="input" id="input" placeholder="Search Building...." />
+=======
+                    <input type="search" name="search" class="input" id="input" placeholder="Search Building...." />
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                     <label for="input" class="labelMenu">
                         <svg viewBox="0 0 512 512" class="searchIcon">
                             <path
@@ -87,6 +111,7 @@
                         </svg>
                     </label>
                     <div class="border"></div>
+<<<<<<< HEAD
                     <button class="micButton"><i class="fa-solid fa-location-arrow"></i></button>
                 </div>
                 <div class="sliderWrap">
@@ -101,6 +126,21 @@
             </li>
         </ul>
     </div>
+=======
+                    <?php
+                            if (DB::connection()->getPdo()) {
+                                $title = DB::table('scenes')->select('title', 'id')->where([['title','like','%'. request('search') . '%']])->get();
+                                foreach ($title as $test) {
+                                    ?>
+                            <button class="micButton" onclick="loadScene({{$test->id}})"><i class="fa-solid fa-location-arrow"></i></button>
+                         <?php
+                            }
+                            }
+                            ?>
+                    
+                </div>
+
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                 <!-- navbar -->
                 <div class="topnav" id="myTopnav">
                     <a href="{{ route('welcome')}}" class="active"><i class="fa-solid fa-house"></i>Home</a>
@@ -109,9 +149,22 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
+<<<<<<< HEAD
                         @foreach($scenes as $scene)
                              <li><a class="smoothscroll" onclick="loadScene({{$scene->id}})" >{{$scene->title}}</a></li>
                         @endforeach	
+=======
+                        <?php
+                            if (DB::connection()->getPdo()) {
+                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%A Room%']])->get();
+                                foreach ($title as $test) {
+                                    ?>
+                            <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
+                         <?php
+                            }
+                            }
+                            ?>
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                         </div>
                     </div>
                     <div class="dropdown">
@@ -119,6 +172,7 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
+<<<<<<< HEAD
                             <a href="#" onclick="roomclick('b101')">Room 101</a>
                             <a href="#" onclick="roomclick('b201')">Room 201</a>
                             <a href="#" onclick="roomclick('b203')">Room 203</a>
@@ -128,6 +182,18 @@
                             <a href="#" onclick="roomclick('b301')">Room 301</a>
                             <a href="#" onclick="roomclick('b304')">Room 304</a>
                             <a href="#" onclick="roomclick('b306')">Room 306</a>
+=======
+                        <?php
+                            if (DB::connection()->getPdo()) {
+                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%B Room%']])->get();
+                                foreach ($title as $test) {
+                                    ?>
+                            <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
+                         <?php
+                            }
+                            }
+                            ?>
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 
                         </div>
                     </div>
@@ -136,6 +202,7 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
+<<<<<<< HEAD
                             <option value=""></option>
                             <a href="#" onclick="roomclick('c107')">Room 107</a>
                             <a href="#" onclick="roomclick('c108')">Room 108</a>
@@ -150,6 +217,18 @@
                             <a href="#" onclick="roomclick('c307')">Room 307</a>
                             <a href="#" onclick="roomclick('c308')">Room 308</a>
                             <a href="#" onclick="roomclick('c309')">Room 309</a>
+=======
+                        <?php
+                            if (DB::connection()->getPdo()) {
+                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%C Room%']])->get();
+                                foreach ($title as $test) {
+                                    ?>
+                            <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
+                         <?php
+                            }
+                            }
+                            ?>
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                         </div>
                     </div>
                     <div class="dropdown">
@@ -157,10 +236,23 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
+<<<<<<< HEAD
                             <a href="#" onclick="roomclick('d101')">Room 101</a>
                             <a href="#" onclick="roomclick('d102')">Room 102</a>
                             <a href="#" onclick="roomclick('d201')">Room 201</a>
                             <a href="#" onclick="roomclick('d202')">Room 202</a>
+=======
+                        <?php
+                            if (DB::connection()->getPdo()) {
+                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%D Room%']])->get();
+                                foreach ($title as $test) {
+                                    ?>
+                            <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
+                         <?php
+                            }
+                            }
+                            ?>
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 
                         </div>
                     </div>
@@ -169,12 +261,25 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
+<<<<<<< HEAD
                             <a href="#" onclick="roomclick('e101')">Room 101</a>
                             <a href="#" onclick="roomclick('e102')">Room 102</a>
                             <a href="#" onclick="roomclick('e103')">Room 103</a>
                             <a href="#" onclick="roomclick('e201')">Room 201</a>
                             <a href="#" onclick="roomclick('e202')">Room 202</a>
                             <a href="#" onclick="roomclick('e203')">Room 203</a>
+=======
+                        <?php
+                            if (DB::connection()->getPdo()) {
+                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%E Room%']])->get();
+                                foreach ($title as $test) {
+                                    ?>
+                            <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
+                         <?php
+                            }
+                            }
+                            ?>
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                         </div>
                     </div>
                     <div class="dropdown">
@@ -214,9 +319,40 @@
                         onclick="myFunction()">&#9776;</a>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
     </div>
     <!-- Java Script --> 
+=======
+     <div class="miniMap">
+        <ul>
+            <li class="info">
+                <i class="fa fa-map fw-bold" aria-hidden="true"></i>
+                    <div class="sliderBar">
+                        <a onclick="showModal()">
+                            <p>BulSu-SC</p>
+                        </a>
+                    </div>
+            </li>
+        </ul>
+    </div>
+    <div class="modal fade" id="denahModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{{asset('/img/Main_2.png')}}" id="map">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+    </div>
+    <!-- Java Script -->
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
@@ -224,12 +360,21 @@
         var load = pannellum.viewer('pannellum', {
             "default": {
                 "firstScene": "{{$fscene->id}}",
+<<<<<<< HEAD
                 "title": "",
+=======
+                "author": "mark feliciano",
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                 "autoLoad":true,
                 "sceneFadeDuration": 2000,
                 "autoRotate": -1,
                 "autoRotateInactivityDelay": 30000,
+<<<<<<< HEAD
                 "hotSpotDebug":true
+=======
+                "hotSpotDebug":true,
+                "disableKeyboardCtrl":true
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
             },
 
             "scenes": { @foreach($scenes as $scene)
@@ -238,19 +383,38 @@
                     "hfov": {{$scene->hfov}},
                     "pitch": {{$scene->pitch}},
                     "yaw": {{$scene->yaw}},
+<<<<<<< HEAD
                     "type": "{{$scene->type}}",
                     "panorama": "{{asset('/img/uploads/' . $scene->image)}}",
 
                     "hotSpots": [@foreach ($hotspots->where('sourceScene', $scene->id) as $hotspot)
+=======
+                    "horizonPitch": {{$scene->horizonPitch}},
+                    "horizonRoll": {{$scene->horizonRoll}},
+                    "type": "{{$scene->type}}",
+                    "panorama": "{{asset('/img/uploads/' . $scene->image)}}",
+                    "hotSpots": [
+                        @foreach ($hotspots->where('sourceScene', $scene->id) as $hotspot)
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                         {
                             "pitch": "{{$hotspot->pitch}}",
                             "yaw": "{{$hotspot->yaw}}",
                             "type": "{{$hotspot->type}}",
                             "text": "{{$hotspot->info}}",
+<<<<<<< HEAD
                             @if($hotspot->type == "scene")
                                 "sceneId": "{{$hotspot->targetScene}}"
                             @endif
                         }, @endforeach
+=======
+                            "horizonPitch": "{{$scene->horizonPitch}}",
+                            "horizonRoll":"{{$scene->horizonRoll}}",
+                            @if($hotspot->type == "scene")
+                                "sceneId": "{{$hotspot->targetScene}}"
+                            @endif
+                        },
+                        @endforeach
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                     ]
                 }, @endforeach
             }
@@ -259,6 +423,7 @@
         function loadScene(clicked_id){
             load.loadScene(clicked_id);
         }
+<<<<<<< HEAD
     </script> 
     
     <script> 
@@ -266,6 +431,15 @@
             $('#denahModal').modal('show');
         };   
     </script> 
+=======
+    </script>
+
+    <script>
+        function showModal(){
+            $('#denahModal').modal('show');
+        };
+    </script>
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 
     <script>
         $("#menu-nav-wrap > ul > li > a").on('click', function(){
@@ -277,7 +451,11 @@
     <script src="{{asset('js/off-canvas.js')}}"></script>
     <script src="{{asset('js/hoverable-collapse.js')}}"></script>
     <script src="{{asset('js/misc.js')}}"></script>
+<<<<<<< HEAD
     <script src="{{asset('js/dashboard.js')}}"></script>
+=======
+    // <script src="{{asset('js/dashboard.js')}}"></script>
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     <script src="{{asset('js/todolist.js')}}"></script>
   </body>
 </html>

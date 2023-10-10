@@ -17,5 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(SceneSeeder::class);
         $this->call(HotspotSeeder::class);
+<<<<<<< HEAD
+=======
+        $this->call(Rooms::class);
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     }
 }

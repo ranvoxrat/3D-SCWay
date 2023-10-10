@@ -11,7 +11,11 @@ class HotspotController extends Controller
     {
         $scene = Scene::all();
         $hotspots = Hotspot::all();
+<<<<<<< HEAD
         return view('admin.configHotspot', compact('hotspots', 'scene'));
+=======
+        return view('admin.configHotspot', compact('scene','hotspots'));
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     }
     /**
      * Store a newly created resource in storage.
@@ -40,7 +44,11 @@ class HotspotController extends Controller
             'targetScene' => $request['targetScene']
         ]);
         
+<<<<<<< HEAD
         return redirect()->route('config')->with('success', 'Hotspot Berhasil Ditambahkan');
+=======
+        return redirect()->route('config')->with('success', 'Hotspot Add Successfully');
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     }
     public function addHotspt(){
         $scene = Scene::all();
@@ -75,7 +83,11 @@ class HotspotController extends Controller
             'targetScene' => $request['targetScene']
         ]);
         
+<<<<<<< HEAD
         return redirect()->route('config')->with(['success' => 'Hotspot Berhasil Diubah']);
+=======
+        return redirect()->route('config')->with(['success' => 'Update Hotspot Successfully']);
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     }
 
     /**
@@ -99,6 +111,10 @@ class HotspotController extends Controller
     public function destroy($id)
     {
         Hotspot::destroy($id);
+<<<<<<< HEAD
         return redirect()->route('config')->with('success','Hotspot Berhasil Dihapus');
+=======
+        return redirect()->route('config')->with('success','Hotspot Deleted Successfully');
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     }
 }

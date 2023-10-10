@@ -18,6 +18,10 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\HotspotController' => $baseDir . '/app/Http/Controllers/HotspotController.php',
+<<<<<<< HEAD
+=======
+    'App\\Http\\Controllers\\MainInterfaceController' => $baseDir . '/app/Http/Controllers/MainInterfaceController.php',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     'App\\Http\\Controllers\\PasswordController' => $baseDir . '/app/Http/Controllers/PasswordController.php',
     'App\\Http\\Controllers\\SceneController' => $baseDir . '/app/Http/Controllers/SceneController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
@@ -36,6 +40,10 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+<<<<<<< HEAD
+=======
+    'App\\Rooms' => $baseDir . '/app/Rooms.php',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     'App\\Rules\\MatchOldPassword' => $baseDir . '/app/Rules/MatchOldPassword.php',
     'App\\Scene' => $baseDir . '/app/Scene.php',
     'App\\User' => $baseDir . '/app/User.php',
@@ -154,6 +162,10 @@ return array(
     'Cron\\MonthField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'Database\\Seeders\\HotspotSeeder' => $baseDir . '/database/seeds/HotspotSeeder.php',
+<<<<<<< HEAD
+=======
+    'Database\\Seeders\\Rooms' => $baseDir . '/database/seeds/Rooms.php',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     'Database\\Seeders\\SceneSeeder' => $baseDir . '/database/seeds/SceneSeeder.php',
     'Database\\Seeders\\UserSeeder' => $baseDir . '/database/seeds/UserSeeder.php',
     'DeepCopy\\DeepCopy' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
@@ -2204,6 +2216,44 @@ return array(
     'Illuminate\\View\\ViewName' => $vendorDir . '/laravel/framework/src/Illuminate/View/ViewName.php',
     'Illuminate\\View\\ViewServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+<<<<<<< HEAD
+=======
+    'Laravel\\Prompts\\Concerns\\Colors' => $vendorDir . '/laravel/prompts/src/Concerns/Colors.php',
+    'Laravel\\Prompts\\Concerns\\Cursor' => $vendorDir . '/laravel/prompts/src/Concerns/Cursor.php',
+    'Laravel\\Prompts\\Concerns\\Erase' => $vendorDir . '/laravel/prompts/src/Concerns/Erase.php',
+    'Laravel\\Prompts\\Concerns\\Events' => $vendorDir . '/laravel/prompts/src/Concerns/Events.php',
+    'Laravel\\Prompts\\Concerns\\FakesInputOutput' => $vendorDir . '/laravel/prompts/src/Concerns/FakesInputOutput.php',
+    'Laravel\\Prompts\\Concerns\\Fallback' => $vendorDir . '/laravel/prompts/src/Concerns/Fallback.php',
+    'Laravel\\Prompts\\Concerns\\Termwind' => $vendorDir . '/laravel/prompts/src/Concerns/Termwind.php',
+    'Laravel\\Prompts\\Concerns\\Themes' => $vendorDir . '/laravel/prompts/src/Concerns/Themes.php',
+    'Laravel\\Prompts\\Concerns\\TypedValue' => $vendorDir . '/laravel/prompts/src/Concerns/TypedValue.php',
+    'Laravel\\Prompts\\ConfirmPrompt' => $vendorDir . '/laravel/prompts/src/ConfirmPrompt.php',
+    'Laravel\\Prompts\\Key' => $vendorDir . '/laravel/prompts/src/Key.php',
+    'Laravel\\Prompts\\MultiSelectPrompt' => $vendorDir . '/laravel/prompts/src/MultiSelectPrompt.php',
+    'Laravel\\Prompts\\Note' => $vendorDir . '/laravel/prompts/src/Note.php',
+    'Laravel\\Prompts\\Output\\BufferedConsoleOutput' => $vendorDir . '/laravel/prompts/src/Output/BufferedConsoleOutput.php',
+    'Laravel\\Prompts\\Output\\ConsoleOutput' => $vendorDir . '/laravel/prompts/src/Output/ConsoleOutput.php',
+    'Laravel\\Prompts\\PasswordPrompt' => $vendorDir . '/laravel/prompts/src/PasswordPrompt.php',
+    'Laravel\\Prompts\\Prompt' => $vendorDir . '/laravel/prompts/src/Prompt.php',
+    'Laravel\\Prompts\\SearchPrompt' => $vendorDir . '/laravel/prompts/src/SearchPrompt.php',
+    'Laravel\\Prompts\\SelectPrompt' => $vendorDir . '/laravel/prompts/src/SelectPrompt.php',
+    'Laravel\\Prompts\\Spinner' => $vendorDir . '/laravel/prompts/src/Spinner.php',
+    'Laravel\\Prompts\\SuggestPrompt' => $vendorDir . '/laravel/prompts/src/SuggestPrompt.php',
+    'Laravel\\Prompts\\Terminal' => $vendorDir . '/laravel/prompts/src/Terminal.php',
+    'Laravel\\Prompts\\TextPrompt' => $vendorDir . '/laravel/prompts/src/TextPrompt.php',
+    'Laravel\\Prompts\\Themes\\Default\\Concerns\\DrawsBoxes' => $vendorDir . '/laravel/prompts/src/Themes/Default/Concerns/DrawsBoxes.php',
+    'Laravel\\Prompts\\Themes\\Default\\Concerns\\DrawsScrollbars' => $vendorDir . '/laravel/prompts/src/Themes/Default/Concerns/DrawsScrollbars.php',
+    'Laravel\\Prompts\\Themes\\Default\\ConfirmPromptRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/ConfirmPromptRenderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\MultiSelectPromptRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/MultiSelectPromptRenderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\NoteRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/NoteRenderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\PasswordPromptRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/PasswordPromptRenderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\Renderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/Renderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\SearchPromptRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/SearchPromptRenderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\SelectPromptRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/SelectPromptRenderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\SpinnerRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/SpinnerRenderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\SuggestPromptRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/SuggestPromptRenderer.php',
+    'Laravel\\Prompts\\Themes\\Default\\TextPromptRenderer' => $vendorDir . '/laravel/prompts/src/Themes/Default/TextPromptRenderer.php',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     'Laravel\\SerializableClosure\\Contracts\\Serializable' => $vendorDir . '/laravel/serializable-closure/src/Contracts/Serializable.php',
     'Laravel\\SerializableClosure\\Contracts\\Signer' => $vendorDir . '/laravel/serializable-closure/src/Contracts/Signer.php',
     'Laravel\\SerializableClosure\\Exceptions\\InvalidSignatureException' => $vendorDir . '/laravel/serializable-closure/src/Exceptions/InvalidSignatureException.php',
@@ -3955,6 +4005,16 @@ return array(
     'Ramsey\\Uuid\\UuidInterface' => $vendorDir . '/ramsey/uuid/src/UuidInterface.php',
     'Ramsey\\Uuid\\Validator\\GenericValidator' => $vendorDir . '/ramsey/uuid/src/Validator/GenericValidator.php',
     'Ramsey\\Uuid\\Validator\\ValidatorInterface' => $vendorDir . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+<<<<<<< HEAD
+=======
+    'RealRashid\\SweetAlert\\Console\\PublishCommand' => $vendorDir . '/realrashid/sweet-alert/src/Console/PublishCommand.php',
+    'RealRashid\\SweetAlert\\Facades\\Alert' => $vendorDir . '/realrashid/sweet-alert/src/Facades/Alert.php',
+    'RealRashid\\SweetAlert\\Storage\\AlertSessionStore' => $vendorDir . '/realrashid/sweet-alert/src/Storage/AlertSessionStore.php',
+    'RealRashid\\SweetAlert\\Storage\\SessionStore' => $vendorDir . '/realrashid/sweet-alert/src/Storage/SessionStore.php',
+    'RealRashid\\SweetAlert\\SweetAlertServiceProvider' => $vendorDir . '/realrashid/sweet-alert/src/SweetAlertServiceProvider.php',
+    'RealRashid\\SweetAlert\\ToSweetAlert' => $vendorDir . '/realrashid/sweet-alert/src/ToSweetAlert.php',
+    'RealRashid\\SweetAlert\\Toaster' => $vendorDir . '/realrashid/sweet-alert/src/Toaster.php',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     'ReturnTypeWillChange' => $vendorDir . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
     'SebastianBergmann\\CliParser\\AmbiguousOptionException' => $vendorDir . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
     'SebastianBergmann\\CliParser\\Exception' => $vendorDir . '/sebastian/cli-parser/src/exceptions/Exception.php',

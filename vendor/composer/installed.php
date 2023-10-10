@@ -412,6 +412,18 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'laravel/prompts' => array(
+            'pretty_version' => 'dev-support-older-php',
+            'version' => 'dev-support-older-php',
+            'reference' => '19d8b5e670cfc9c5a091d00715c46f58b8daa7de',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/prompts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
         'laravel/serializable-closure' => array(
             'pretty_version' => 'v1.3.1',
             'version' => '1.3.1.0',
@@ -518,9 +530,15 @@
             'dev_requirement' => false,
         ),
         'nette/schema' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v1.2.4',
             'version' => '1.2.4.0',
             'reference' => 'c9ff517a53903b3d4e29ec547fb20feecb05b8ab',
+=======
+            'pretty_version' => 'v1.2.5',
+            'version' => '1.2.5.0',
+            'reference' => '0462f0166e823aad657c9224d0f849ecac1ba10a',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
             'type' => 'library',
             'install_path' => __DIR__ . '/../nette/schema',
             'aliases' => array(),
@@ -800,6 +818,18 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'realrashid/sweet-alert' => array(
+            'pretty_version' => 'v7.1.0',
+            'version' => '7.1.0.0',
+            'reference' => '769f951053cd3363fd7fb7a1dd30f9828b619b44',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../realrashid/sweet-alert',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
             'replaced' => array(

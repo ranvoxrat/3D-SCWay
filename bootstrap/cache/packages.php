@@ -52,6 +52,20 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+<<<<<<< HEAD
+=======
+  'realrashid/sweet-alert' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Alert' => 'RealRashid\\SweetAlert\\Facades\\Alert',
+    ),
+  ),
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
   'yajra/laravel-datatables-oracle' => 
   array (
     'providers' => 

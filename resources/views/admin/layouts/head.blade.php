@@ -9,8 +9,13 @@
     <link rel="stylesheet" href="{{asset('vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendors/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{asset('fontawesome-free-6.4.0-web/css/all.min.css')}}">
+<<<<<<< HEAD
 
     <link rel="stylesheet" href="{{asset('css/adminControl.css')}}">
+=======
+    <link rel="stylesheet" href="{{asset('css/adminControl.css')}}">
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     <link rel="stylesheet" href="{{asset('adminMobile.css')}}" media="(max-width:768px)">
   
     <script src="{{asset('js/wow.min.js')}}"></script>

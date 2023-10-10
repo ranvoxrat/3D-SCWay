@@ -88,7 +88,11 @@
                                         <input placeholder="Hfov" type="text"  name="hfov" class="input">
                                     </div>
                                     <div class="group">
+<<<<<<< HEAD
                                         <input class="form-control form-control-lg input-rounded mb-4" type="hidden" name="type" value="equirectangular">
+=======
+                                        <input class="form-control form-control-lg input-rounded mb-4" type="hidden" name="type" >
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
                                    </div>
                                     <div class="group">
                                         <i class="fa fa-location icon"></i>

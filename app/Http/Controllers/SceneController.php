@@ -21,6 +21,10 @@ class SceneController extends Controller
         $hotspots = Hotspot::all();
         return view('admin.config', compact('hotspots', 'scene'));
     }
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
    public function Welcome(){
     return view('welcome');
    }
@@ -144,8 +148,15 @@ public function addSceneCampus(){
             'title' => 'required|max:255',
             'type' => 'required',
             'hfov' => 'required|min:-360|max:360',
+<<<<<<< HEAD
             'yaw' => 'required|min:-360|max:360',
             'pitch' => 'required|min:-360|max:360',
+=======
+            'pitch' => 'required|min:-360|max:360',
+            'yaw' => 'required|min:-360|max:360',
+            'horizonRoll' => 'required|min:-360|max:360',
+            'horizonPitch' => 'required|min:-360|max:360',
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
             'image' => 'image'
         ]);
 
@@ -162,12 +173,23 @@ public function addSceneCampus(){
             'title' => $request['title'],
             'type' => $request['type'],
             'hfov' => $request['hfov'],
+<<<<<<< HEAD
             'yaw' => $request['yaw'],
             'pitch' => $request['pitch'],
             'image' => $file_name
         ]);
         
         return redirect()->route('config')->with('success', 'Scene Berhasil Diubah');
+=======
+            'pitch' => $request['pitch'],
+            'yaw' => $request['yaw'],
+            'horizonRoll' => $request['horizonRoll'],
+            'horizonPitch' => $request['horizonPitch'],
+            'image' => $file_name
+        ]);
+        
+        return redirect()->route('config')->with('success', 'Scene Updated Successfully');
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     }
 
     public function status(Request $request, $id){
@@ -177,7 +199,11 @@ public function addSceneCampus(){
             'status' => $request['check']
         ]);
 
+<<<<<<< HEAD
         return redirect()->route('config')->with('success', 'Scene Utama Berhasil Diubah');
+=======
+        return redirect()->route('config')->with('success', 'Main scene successfully changed');
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     }
     /**
      * Remove the specified resource from storage.
@@ -188,6 +214,10 @@ public function addSceneCampus(){
     public function destroy($id)
     {
         Scene::destroy($id);
+<<<<<<< HEAD
         return redirect()->route('config')->with('success','Scene Berhasil Dihapus');
+=======
+        return redirect()->route('config')->with('success','Scene Deleted Successfuly!');
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     }
 }

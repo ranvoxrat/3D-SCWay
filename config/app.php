@@ -174,7 +174,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+<<<<<<< HEAD
 
+=======
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
     ],
 
     /*
@@ -227,6 +231,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Datatables' => Yajra\DataTables\Facades\DataTables::class,
+<<<<<<< HEAD
     ],
+=======
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+    ],
+  
+>>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 
 ];
