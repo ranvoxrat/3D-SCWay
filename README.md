@@ -4,9 +4,6 @@ This is my thesis project, created a virtual tour of my campus using [Pannellum]
 
 # Preview
 
-![Preview1](public/img/preview.png)
-![Preview1](public/img/preview2.png)
-
 ## Getting started
 
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/8.x/deployment#server-requirements)
