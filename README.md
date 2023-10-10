@@ -62,8 +62,6 @@ You can access the app in http://localhost:8000 (Make sure you run your web serv
 git clone https://github.com/ranvoxrat/3D-SCWay.git
 cd Bulsu
 =======
-git clone https://gitlab.com/ariestaazalia/Virtual-Tour-using-Pannellum.git
->>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 composer install
 cp .env.example .env
 php artisan key:generate
