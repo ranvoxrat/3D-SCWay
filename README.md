@@ -60,8 +60,7 @@ You can access the app in http://localhost:8000 (Make sure you run your web serv
 ## TLDR
 ```
 git clone https://github.com/ranvoxrat/3D-SCWay.git
-cd Bulsu
-=======
+cd BulsuSc
 composer install
 cp .env.example .env
 php artisan key:generate
