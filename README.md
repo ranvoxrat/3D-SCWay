@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 3D sc-Way
 
 The SC-WAY: A 3D campus guide in Bulacan State University-Sarmiento Campus offers a virtual 3D tour of the campus, 
@@ -17,17 +16,10 @@ This is our capstone project, created a virtual tour of my campus using [Pannell
 
 This is my thesis project, created a virtual tour of my campus using [Pannellum](https://pannellum.org/) Package.
 
-# Preview
-
-![Preview1](public/img/preview.png)
-![Preview1](public/img/preview2.png)
->>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
-
 ## Getting started
 
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/8.x/deployment#server-requirements)
 
-<<<<<<< HEAD
 Assuming you've already installed on your machine: PHP (>= 8.0), [Composer](https://getcomposer.org/), and local web server
 =======
 Assuming you've already installed on your machine: PHP (>= 7.3.0), [Composer](https://getcomposer.org/), and local web server
@@ -37,13 +29,8 @@ Assuming you've already installed on your machine: PHP (>= 7.3.0), [Composer](ht
 
 Clone the repository
 ```
-<<<<<<< HEAD
 git clone https://github.com/ranvoxrat/3D-SCWay.git
-=======
-git clone https://gitlab.com/ariestaazalia/Virtual-Tour-using-Pannellum.git
->>>>>>> 9d0f165443253363713b12d7b0a724c5cd2dc8a8
 ```
-
 Switch to the folder
 
 Install all the dependencies using composer
