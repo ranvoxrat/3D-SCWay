@@ -56,8 +56,10 @@
             <div class="content">
                 <i class="fa-solid fa-bars"></i>
                 <!-- search -->
-                <div class="InputContainer" id="searchGroup">
-                    <button class="openbtn" onclick="openNav()"><i class="fa-solid fa-bars"></i></button>
+                
+                
+                <form action="{{ route('search') }}" method="get" class="InputContainer" id="searchGroup">
+                {{csrf_field()}}
                     <input type="search" name="search" class="input" id="input" placeholder="Search Building...." />
                     <label for="input" class="labelMenu">
                         <svg viewBox="0 0 512 512" class="searchIcon">
@@ -66,20 +68,15 @@
                             </path>
                         </svg>
                     </label>
-                    <div class="border"></div>
-                    <?php
-                            if (DB::connection()->getPdo()) {
-                                $title = DB::table('scenes')->select('title', 'id')->where([['title','like','%'. request('search') . '%']])->get();
-                                foreach ($title as $test) {
-                                    ?>
-                            <button class="micButton" onclick="loadScene({{$test->id}})"><i class="fa-solid fa-location-arrow"></i></button>
-                         <?php
-                            }
-                            }
-                            ?>
-                    
-                </div>
-
+                    <div class="border"></div> 
+                  
+                                   
+                                   
+                           <button class="micButton" type="submit"  onclick="loadScene('12')"><i class="fa-solid fa-location-arrow"></i></button>
+                        
+                    </form>
+                   
+                  
                 <!-- navbar -->
                 <div class="topnav" id="myTopnav">
                     <a href="{{ route('welcome')}}" class="active"><i class="fa-solid fa-house"></i>Home</a>

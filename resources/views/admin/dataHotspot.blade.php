@@ -338,9 +338,7 @@
                         <label for="hfov" class="m-0 position-relative fw-normal">Pitch</label>
                         <input class="border-top-0 border-start-0 border-end-0 text-center" type="number" step="0.1" name="pitch" min="-360" max="360" value="{{$hotspot->pitch}}" required>
                     </div>
-                    <div class="d-flex flex-column text-black">
-                        <input class=" mb-4" type="hidden" name="type" value="{{$item->type}}">
-                    </div>
+                   
                     <div class="d-flex flex-column text-black p-2">
                         <label for="pitch" class="m-0 position-relative fw-normal">Text</label>
                         <textarea class="border-top-0 border-start-0 border-end-0 text-center" name="text" required > {{$hotspot->info}} </textarea>

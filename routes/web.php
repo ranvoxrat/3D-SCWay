@@ -51,3 +51,4 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/', 'SceneController@Welcome')->name('welcome');
 Route::get('/interface', 'MainInterfaceController@interface')->name('mainpage');
+Route::get('/searchs', 'MainInterfaceController@index')->name('search');

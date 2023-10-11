@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Scene;
 class MainInterfaceController extends Controller
 {
-    
- 
-    public function findData(){
-        $scene = Scene::all();
-        $filterdata = search('Building E',fn (string $value) => strlen($value) > 0? Scene::where('title', 'like', "%{$value}%")->pluck('title', 'id')->all(): [] );
-        return view('mainInterface',compact('scene','filterdata'));
-     }
     public function interface()
     {
         $fscene= DB::table('scenes')->where('status', '1')->first();
@@ -24,7 +18,17 @@ class MainInterfaceController extends Controller
         return view('mainInterface', compact('fscene', 'scenes', 'hotspots'));
     }
  
-       
+    public function index(Request $request){
+        
+        $searchData = $request->input('search');
+        $users = DB::table('scenes')->where('title','LIKE','%'. $searchData .'%')->get();
+
+        // $users = Scene::with('title', function($query) use ($search) {
+        //      $query->where('title', 'LIKE', '%' . $search . '%');
+        // })->get();
+
+        return redirect()->route('mainpage',compact('users'));
+    }
     
     
 }

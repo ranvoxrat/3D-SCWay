@@ -131,6 +131,7 @@ class ComposerStaticInit2cb76fcf5bc0c6659d74ee143d40b227
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\SerializableClosure\\' => 28,
+            'Laravel\\Scout\\' => 14,
             'Laravel\\Prompts\\' => 16,
         ),
         'I' => 
@@ -411,6 +412,10 @@ class ComposerStaticInit2cb76fcf5bc0c6659d74ee143d40b227
         'Laravel\\SerializableClosure\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
+        ),
+        'Laravel\\Scout\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/scout/src',
         ),
         'Laravel\\Prompts\\' => 
         array (
@@ -2764,6 +2769,33 @@ class ComposerStaticInit2cb76fcf5bc0c6659d74ee143d40b227
         'Laravel\\Prompts\\Themes\\Default\\SpinnerRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/SpinnerRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\SuggestPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/SuggestPromptRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\TextPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/TextPromptRenderer.php',
+        'Laravel\\Scout\\Attributes\\SearchUsingFullText' => __DIR__ . '/..' . '/laravel/scout/src/Attributes/SearchUsingFullText.php',
+        'Laravel\\Scout\\Attributes\\SearchUsingPrefix' => __DIR__ . '/..' . '/laravel/scout/src/Attributes/SearchUsingPrefix.php',
+        'Laravel\\Scout\\Builder' => __DIR__ . '/..' . '/laravel/scout/src/Builder.php',
+        'Laravel\\Scout\\Console\\DeleteAllIndexesCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/DeleteAllIndexesCommand.php',
+        'Laravel\\Scout\\Console\\DeleteIndexCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/DeleteIndexCommand.php',
+        'Laravel\\Scout\\Console\\FlushCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/FlushCommand.php',
+        'Laravel\\Scout\\Console\\ImportCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/ImportCommand.php',
+        'Laravel\\Scout\\Console\\IndexCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/IndexCommand.php',
+        'Laravel\\Scout\\Console\\SyncIndexSettingsCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/SyncIndexSettingsCommand.php',
+        'Laravel\\Scout\\Contracts\\PaginatesEloquentModels' => __DIR__ . '/..' . '/laravel/scout/src/Contracts/PaginatesEloquentModels.php',
+        'Laravel\\Scout\\EngineManager' => __DIR__ . '/..' . '/laravel/scout/src/EngineManager.php',
+        'Laravel\\Scout\\Engines\\AlgoliaEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/AlgoliaEngine.php',
+        'Laravel\\Scout\\Engines\\CollectionEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/CollectionEngine.php',
+        'Laravel\\Scout\\Engines\\DatabaseEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/DatabaseEngine.php',
+        'Laravel\\Scout\\Engines\\Engine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/Engine.php',
+        'Laravel\\Scout\\Engines\\MeiliSearchEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/MeiliSearchEngine.php',
+        'Laravel\\Scout\\Engines\\NullEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/NullEngine.php',
+        'Laravel\\Scout\\Events\\ModelsFlushed' => __DIR__ . '/..' . '/laravel/scout/src/Events/ModelsFlushed.php',
+        'Laravel\\Scout\\Events\\ModelsImported' => __DIR__ . '/..' . '/laravel/scout/src/Events/ModelsImported.php',
+        'Laravel\\Scout\\Jobs\\MakeSearchable' => __DIR__ . '/..' . '/laravel/scout/src/Jobs/MakeSearchable.php',
+        'Laravel\\Scout\\Jobs\\RemoveFromSearch' => __DIR__ . '/..' . '/laravel/scout/src/Jobs/RemoveFromSearch.php',
+        'Laravel\\Scout\\Jobs\\RemoveableScoutCollection' => __DIR__ . '/..' . '/laravel/scout/src/Jobs/RemoveableScoutCollection.php',
+        'Laravel\\Scout\\ModelObserver' => __DIR__ . '/..' . '/laravel/scout/src/ModelObserver.php',
+        'Laravel\\Scout\\Scout' => __DIR__ . '/..' . '/laravel/scout/src/Scout.php',
+        'Laravel\\Scout\\ScoutServiceProvider' => __DIR__ . '/..' . '/laravel/scout/src/ScoutServiceProvider.php',
+        'Laravel\\Scout\\Searchable' => __DIR__ . '/..' . '/laravel/scout/src/Searchable.php',
+        'Laravel\\Scout\\SearchableScope' => __DIR__ . '/..' . '/laravel/scout/src/SearchableScope.php',
         'Laravel\\SerializableClosure\\Contracts\\Serializable' => __DIR__ . '/..' . '/laravel/serializable-closure/src/Contracts/Serializable.php',
         'Laravel\\SerializableClosure\\Contracts\\Signer' => __DIR__ . '/..' . '/laravel/serializable-closure/src/Contracts/Signer.php',
         'Laravel\\SerializableClosure\\Exceptions\\InvalidSignatureException' => __DIR__ . '/..' . '/laravel/serializable-closure/src/Exceptions/InvalidSignatureException.php',
