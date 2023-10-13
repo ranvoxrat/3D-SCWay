@@ -41,6 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/editScene/{id}', 'SceneController@update')->name('editScene');
     Route::put('/editHotspot/{id}', 'HotspotController@update')->name('editHotspot');
     Route::put('/editprofile/{id}', 'UserController@update')->name('editProfil');
+
+    Route::get('/RegisterAccount','Auth/RegisterController.php@showRegistrationForm')->name('Register');
+
     Route::put('/setFScene/{id}', 'SceneController@status')->name('changeFScene');
 
     Route::delete('/delUser/{id}', 'UserController@destroy')->name('delProfil');
@@ -51,4 +54,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/', 'SceneController@Welcome')->name('welcome');
 Route::get('/interface', 'MainInterfaceController@interface')->name('mainpage');
-Route::get('/searchs', 'MainInterfaceController@index')->name('search');
+// Route::get('/search', 'MainInterfaceController@index')->name('search');
+Route::get('/autoComplete', 'MainInterfaceController@SearchData')->name('autocomplete');
+Route::get('/get-data', 'MainInterfaceController@getData')->name('get.data');

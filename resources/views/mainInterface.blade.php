@@ -10,7 +10,8 @@
         <!-- <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" media="all"> -->
         <link rel="stylesheet" href="{{asset('css/interface.css')}}">
         {{-- Icon --}}
-        <link rel="icon" href="{{asset('img/UnsoedIcon.png')}}">
+        <link rel="shortcut icon" href="{{asset('img/bulsu-logo.png')}}" type="image/png">
+
 
         <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -45,7 +46,7 @@
     </head>
 
     <body>
-    
+
     <div id="main ">
         <div id="pannellum">
             <div id="controls">
@@ -57,10 +58,12 @@
                 <i class="fa-solid fa-bars"></i>
                 <!-- search -->
                 
-                
-                <form action="{{ route('search') }}" method="get" class="InputContainer" id="searchGroup">
-                {{csrf_field()}}
-                    <input type="search" name="search" class="input" id="input" placeholder="Search Building...." />
+
+                <form action="{{ route('autocomplete')}}" method="GET" class="InputContainer" id="searchGroup">
+                <!-- {{csrf_field()}} -->
+               
+                    <input type="search" name="search-input" id="search-input" class="input" placeholder="Search Building...." onkeyup="showHint(this.value)"/>
+                    <div id="search-results"></div>
                     <label for="input" class="labelMenu">
                         <svg viewBox="0 0 512 512" class="searchIcon">
                             <path
@@ -68,15 +71,12 @@
                             </path>
                         </svg>
                     </label>
-                    <div class="border"></div> 
-                  
-                                   
-                                   
-                           <button class="micButton" type="submit"  onclick="loadScene('12')"><i class="fa-solid fa-location-arrow"></i></button>
-                        
+                    <div class="border"></div>
+                   
+                                 <button class="micButton" type="search" name="btnsearch" id="btnsearch"><i class="fa-solid fa-location-arrow"></i></button>
+                       
                     </form>
                    
-                  
                 <!-- navbar -->
                 <div class="topnav" id="myTopnav">
                     <a href="{{ route('welcome')}}" class="active"><i class="fa-solid fa-house"></i>Home</a>
@@ -86,16 +86,16 @@
                         </button>
                         <div class="dropdown-content">
                         <?php
-                            if (DB::connection()->getPdo()) {
-                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%A Room%']])->get();
-                                foreach ($title as $test) {
-                                    ?>
-                            <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
-                         <?php
-                            }
-                            }
-                            ?>
-                        </div>
+                        if (DB::connection()->getPdo()) {
+                            $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%A Room%']])->get();
+                            foreach ($title as $test) {
+                                ?>
+                                <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
+                        <?php
+                        }
+                        }
+                        ?>
+                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn"><i class="fa-solid fa-building"></i> B
@@ -103,15 +103,15 @@
                         </button>
                         <div class="dropdown-content">
                         <?php
-                            if (DB::connection()->getPdo()) {
-                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%B Room%']])->get();
-                                foreach ($title as $test) {
-                                    ?>
-                            <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
-                         <?php
-                            }
-                            }
-                            ?>
+if (DB::connection()->getPdo()) {
+    $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%B Room%']])->get();
+    foreach ($title as $test) {
+        ?>
+                                                    <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
+                                                <?php
+}
+}
+?>
 
                         </div>
                     </div>
@@ -121,15 +121,15 @@
                         </button>
                         <div class="dropdown-content">
                         <?php
-                            if (DB::connection()->getPdo()) {
-                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%C Room%']])->get();
-                                foreach ($title as $test) {
-                                    ?>
+if (DB::connection()->getPdo()) {
+    $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%C Room%']])->get();
+    foreach ($title as $test) {
+        ?>
                             <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
                          <?php
-                            }
-                            }
-                            ?>
+}
+}
+?>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -138,15 +138,15 @@
                         </button>
                         <div class="dropdown-content">
                         <?php
-                            if (DB::connection()->getPdo()) {
-                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%D Room%']])->get();
-                                foreach ($title as $test) {
-                                    ?>
+if (DB::connection()->getPdo()) {
+    $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%D Room%']])->get();
+    foreach ($title as $test) {
+        ?>
                             <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
                          <?php
-                            }
-                            }
-                            ?>
+}
+}
+?>
 
                         </div>
                     </div>
@@ -156,15 +156,15 @@
                         </button>
                         <div class="dropdown-content">
                         <?php
-                            if (DB::connection()->getPdo()) {
-                                $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%E Room%']])->get();
-                                foreach ($title as $test) {
-                                    ?>
+if (DB::connection()->getPdo()) {
+    $title = DB::table('scenes')->select('title', 'id')->where([['title', 'like', '%E Room%']])->get();
+    foreach ($title as $test) {
+        ?>
                             <li><a class="smoothscroll" onclick="loadScene({{$test->id}})" >{{$test->title}}</a></li>
                          <?php
-                            }
-                            }
-                            ?>
+}
+}
+?>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -235,6 +235,83 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
+<script>
+   $(document).ready(function() {
+    $('#search-input').on('input', function() {
+        var query = $(this).val();
+        if (query.length >= 4) {
+            $.ajax({
+                url: "{{ route('autocomplete') }}",
+                method: "GET",
+                data: { query: title },
+                success: function(response) {
+                    var results = response;
+
+                    var suggestions = '';
+                    results.forEach(function(result) {
+                        suggestions += '<div class="suggestion">' + result.column + '</div>';
+                    });
+
+                    $('#search-results').html(suggestions);
+                }
+            });
+        } else {
+            $('#search-results').empty();
+        }
+    });
+});
+
+
+// $(function () {
+//    $('#btnsearch').on('click', function () {
+//       $.ajax({
+//          url: "{{ route('get.data') }}",
+//          method: "GET",
+//          success: function(response) {
+//             alert(JSON.stringify(response));
+//          },
+//          error: function(xhr, status, error) {
+//             console.error(error);
+//          }
+//       });
+//    });
+// });
+
+
+//    $(function () {
+//       $('#btnsearch').on('click', function () {
+//          $.ajax({
+//             url: "{{ route('autocomplete') }}",
+//             method: "GET",
+//          success: function(response) {
+//            alert(JSON.stringify(response));
+//     },
+//     error: function(xhr, status, error) {
+//         // Handle any errors that occur during the request
+//         console.error(error);
+//     }
+//          });
+//       });
+//    });
+
+
+
+/*function showHint(str) {
+    if (str.length == 0) {
+        document.getElementById("search").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("search").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "{{route('autocomplete')}}?q=" + str, true);
+        xmlhttp.send();
+    }
+}*/
+</script>
     <script>
         var load = pannellum.viewer('pannellum', {
             "default": {

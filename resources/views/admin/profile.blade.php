@@ -1,6 +1,6 @@
 @extends('admin.main')
 
-@section('title', 'Ubah Profil')
+@section('title', 'Admin Profile')
 
 @section('content')
 @if ($message = Session::get('success'))
@@ -129,27 +129,27 @@
        <div class="d-flex col-lg col-md col-sm">
        <div class="groupinput">
            <label for="fname">Firstname</label>
-           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Input Firstname" type="text" name="fname" autocomplete="off" required>
+           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Firstname" type="text" name="fname" autocomplete="off" required>
       </div>
       <div class="groupinput">
            <label for="lname">Latstname</label>
-           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Input Lastname" type="text" name="lname" autocomplete="off" required>
+           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Lastname" type="text" name="lname" autocomplete="off" required>
       </div>
        </div>
       <div class="d-flex col-lg col-md col-sm">
       <div class="groupinput">
            <label for="age">Age</label>
-           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Input Age" type="text" name="age" autocomplete="off" required>
+           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Age" type="text" name="age" autocomplete="off" required>
       </div>
       <div class="groupinput">
            <label for="gender">Gender</label>
-           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Input Gender" type="text" name="gender" autocomplete="off" required>
+           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Gender" type="text" name="gender" autocomplete="off" required>
       </div>
       </div>
       <div class="d-flex col-lg col-md col-sm">
       <div class="groupinput">
            <label for="address">Address</label>
-           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Input Address" type="text" name="address" autocomplete="off" required>
+           <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center" placeholder="Address" type="text" name="address" autocomplete="off" required>
       </div>
       </div>
       <div class="d-flex justify-content-end col-lg col-md col-sm">

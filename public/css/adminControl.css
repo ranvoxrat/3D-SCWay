@@ -15202,3 +15202,36 @@ input:hover {
   /* background-image: linear-gradient(to right,rgb(75,0,130),rgb(255,0,255)); */
   border: none!important;
 }
+.card-body>.d-flex>.btnAdd{
+  background-color: #0050e3;
+  color: white;
+  width: 8%;
+  height: 30px;
+  border-radius: 2%;
+  border:none;
+}
+.card-body>.d-flex>.btnAdd:hover{
+  background-color: green;
+}
+.card-body>.d-flex>h1{
+  font-family: 'poppins';
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+  padding-left: 12px;
+}
+.card-body>.d-flex>.line{
+  position: absolute;
+  display: block;
+  content: "";
+  clear: both;
+  top: 17px;
+  margin-top: 0px;
+  height: 38px;
+  width: 4px;
+  background-color: #dc3545;
+}
+.card-body>.h-25{
+ height: 50px!important;
+}

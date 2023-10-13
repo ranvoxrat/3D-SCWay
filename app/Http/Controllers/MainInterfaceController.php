@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Scene;
+
+use function Laravel\Prompts\select;
+
 class MainInterfaceController extends Controller
 {
     public function interface()
@@ -18,17 +21,18 @@ class MainInterfaceController extends Controller
         return view('mainInterface', compact('fscene', 'scenes', 'hotspots'));
     }
  
-    public function index(Request $request){
-        
-        $searchData = $request->input('search');
-        $users = DB::table('scenes')->where('title','LIKE','%'. $searchData .'%')->get();
+    public function SearchData(Request $request){
+        $query = $request->input('search-inputs');
 
-        // $users = Scene::with('title', function($query) use ($search) {
-        //      $query->where('title', 'LIKE', '%' . $search . '%');
-        // })->get();
+        $title = DB::table('scenes')
+                    ->select('title','id')
+                    ->where('title', 'LIKE', "%$query%")
+                    ->limit(5)
+                    ->get();
 
-        return redirect()->route('mainpage',compact('users'));
+        echo "loadScene($title->id)";
+        return view('mainpage',compact($title));
     }
     
-    
+
 }

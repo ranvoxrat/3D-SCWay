@@ -2091,4 +2091,39 @@ p.form-message.error.form-message.error {
  }
 
  /*Testimonial Card */
+ .features_area{
+  position: relative!important;
+  display: block!important;
+  width: 100%!important;
+  height: 100vh!important;
+ }
+ .features_area>.container{
+  content: "";
+  clear: both;
+  display: flex!important;
+  flex-wrap: wrap!important;
+  justify-content: center!important;
+  align-items: center!important;
+  align-content: center!important;
+  width: 100%;
+  height: 100%;
+ }
+ .about_area{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+ }
+ .about_area>.container{
+  content: "";
+  clear: both;
+  display: flex!important;
+  flex-wrap: wrap!important;
+  justify-content: center!important;
+  align-items: center!important;
+  align-content: center!important;
+  width: 100%;
+  height: 100%;
+ }
+ /* miga */
  

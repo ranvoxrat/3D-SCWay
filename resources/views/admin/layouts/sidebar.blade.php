@@ -4,7 +4,7 @@
               <div class="nav-profile-image">
                 <img src="{{asset('img/faces/mark.png')}}" alt="profile">
                 <span class="login-status online"></span>
-                <!--change to offline or busy as needed-->
+ 
               </div>
               <div class="nav-profile-text d-flex flex-column">
                 <span class="font-weight-bold mb-2">Mark Feliciano</span>
@@ -28,26 +28,14 @@
             </a>
             <div class="collapse" id="Accounts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> 
-                    <a class="nav-link" href="">Create Account</a>
+                <li class="nav-item {{ Request::routeIs('createAccount') ? 'active' : '' }}"> 
+                    <a class="nav-link" href="{{ route('createAccount')}}">Create Account</a>
                   </li>
                 <li class="nav-item"> <a class="nav-link" href="">Update Password</a>
                 </li>
               </ul>
             </div>
           </li>
-          <!-- <li class="nav-item  {{ Request::routeIs('addHotspots') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('addHotspots')}}">
-              <span class="menu-title">Hotspot</span>
-              <i class="fa-solid fa-location menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item {{ Request::routeIs('addScenes') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('addScenes')}}">
-              <span class="menu-title">Scene</span>
-              <i class="fa-solid fa-location menu-icon"></i>
-            </a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#buidlings" aria-expanded="false"
               aria-controls="Accounts">

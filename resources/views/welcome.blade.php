@@ -7,9 +7,9 @@
     <title>3D SC-WAY</title>
     <meta name="description" content>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png"> -->
+    
     <link rel="stylesheet" href="{{asset('fontawesome-free-6.4.0-web/css/all.css')}}">
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="{{asset('img/bulsu-logo.png')}}" type="image/png">
 
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
 
@@ -27,9 +27,6 @@
 </head>
 
 <body>
-    <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
 
     <div class="preloader">
         <div class="loader">
@@ -51,7 +48,7 @@
 
     <section id="home" class="header_area">
         <div id="header_navbar" class="header_navbar">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
@@ -99,7 +96,7 @@
                             <div class="hero_content text-center">
                                 <!-- <div class="imagas d-flex justify-content-start align-items-center">
                                     <img class="fadeInUp" src="./assets/image/bulsu-logo.png" alt="bulsu" id="logo1">
-                                    <img class="fadeInUp" src="./assets/image/logo.png" alt="bulsu" id="logo2">                
+                                    <img class="fadeInUp" src="./assets/image/logo.png" alt="bulsu" id="logo2">
                                 </div> -->
                                 <h2 class="hero_title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Welcome To</h2>
                                 <h1 class="wow fadeInUp"><span>B</span>ulacan <span>S</span>tate <span>U</span>niversity</h1>
@@ -125,7 +122,7 @@
     </section>
 
 
-    <section id="features" class="features_area pt-120">
+    <section id="features" class="features_area">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 p-6">
@@ -143,7 +140,6 @@
                 <div class="col-lg-4 col-md-7">
                     <div class="single_features text-center mt-30 wow fadeInUp" data-wow-duration="1.3s"
                         data-wow-delay="0.2s">
-                        <!-- <i class="lni lni-layers"></i> -->
                         <i class="fa-solid fa-location-dot"></i>
                         <h4 class="features_title">Street View</a></h4>
                         <p>Users will be able to access a street view of the campus and explore it virtually by walking
@@ -172,9 +168,9 @@
     </section>
 
 
-    <section id="about" class="pt-130">
+    <section id="about">
         <div class="about_area">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="about_content p-4">
@@ -182,7 +178,7 @@
                                 <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">About
                                     <span>3D</span> SC-Way
                                 </h4>
-                                <!-- <span class="underline wow fadeInLeft"></span> -->
+
                                 <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">The SC-WAY: A 3D
                                     campus guide in Bulacan State University -
                                     Sarmiento Campus offers a virtual 3D tour of the campus, allowing users to
@@ -225,19 +221,19 @@
         </div>
         <div class="portfolio_wrapper d-flex flex-wrap">
             <div class="single_portfolio wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                <img src="{{asset('img/buildings/gate.jpeg')}}" alt="portfolio">
+                <img src="{{asset('img/buildings/gate.jpeg')}}" alt="portfolio" id="gate">
                 <div class="portfolio_content">
                     <ul class="meta">
-                        <li><a href="#0"><i class="lni lni-link"></i></a></li>
+                        <li><a href=""><i class="fa-solid fa-eye"></i></a></li>
                     </ul>
                     <h5 class="portfolio_title">Campus Gate</h5>
                 </div>
             </div>
             <div class="single_portfolio wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                <img src="{{asset('img/buildings/bA.jpeg')}}" alt="portfolio">
+                <img src="{{asset('img/buildings/bA.jpeg')}}" id="buildingA" alt="portfolio">
                 <div class="portfolio_content">
                     <ul class="meta">
-                        <li><a href="#0"><i class="lni lni-link"></i></a></li>
+                        <li><a href="#0"><i class="fa-solid fa-eye"></i></a></li>
                     </ul>
                     <h5 class="portfolio_title">Building A</h5>
                 </div>
@@ -246,7 +242,7 @@
                 <img src="{{asset('img/buildings/bB.jpeg')}}" alt="portfolio">
                 <div class="portfolio_content">
                     <ul class="meta">
-                        <li><a href="#0"><i class="lni lni-link"></i></a></li>
+                        <li><a href="#0"><i class="fa-solid fa-eye"></i></a></li>
                     </ul>
                     <h5 class="portfolio_title">Building B</h5>
                 </div>
@@ -255,7 +251,7 @@
                 <img src="{{asset('img/buildings/bC.jpeg')}}" alt="portfolio">
                 <div class="portfolio_content">
                     <ul class="meta">
-                        <li><a href="#0"><i class="lni lni-link"></i></a></li>
+                        <li><a href="#0"><i class="fa-solid fa-eye"></i></a></li>
                     </ul>
                     <h5 class="portfolio_title">Building C</h5>
                 </div>
@@ -264,7 +260,7 @@
                 <img src="{{asset('img/buildings/bD.jpeg')}}" alt="portfolio">
                 <div class="portfolio_content">
                     <ul class="meta">
-                        <li><a href="#0"><i class="lni lni-link"></i></a></li>
+                        <li><a href="#0"><i class="fa-solid fa-eye"></i></a></li>
                     </ul>
                     <h5 class="portfolio_title">Building D</h5>
                 </div>
@@ -273,7 +269,7 @@
                 <img src="{{asset('img/buildings/bE.jpeg')}}" alt="portfolio">
                 <div class="portfolio_content">
                     <ul class="meta">
-                        <li><a href="#0"><i class="lni lni-link"></i></a></li>
+                        <li><a href="#0"><i class="fa-solid fa-eye"></i></a></li>
                     </ul>
                     <h5 class="portfolio_title">Building E</h5>
                 </div>
@@ -282,7 +278,7 @@
                 <img src="{{asset('img/buildings/inf.jpeg')}}" alt="portfolio">
                 <div class="portfolio_content">
                     <ul class="meta">
-                        <li><a href="#0"><i class="lni lni-link"></i></a></li>
+                        <li><a href="#0"><i class="fa-solid fa-eye"></i></a></li>
                     </ul>
                     <h5 class="portfolio_title">Building</h5>
                 </div>
@@ -291,11 +287,17 @@
                 <img src="{{asset('img/369256732_691852536313414_2544957693081692163_n.jpg')}}" alt="portfolio">
                 <div class="portfolio_content">
                     <ul class="meta">
-                        <li><a href="#0"><i class="lni lni-link"></i></a></li>
+                        <li><a href="#0"><i class="fa-solid fa-eye"></i></a></li>
                     </ul>
                     <h5 class="portfolio_title">Campus Building</h5>
                 </div>
             </div>
+        </div>
+        <!-- The Modal -->
+ <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
         </div>
     </section>
 
@@ -305,9 +307,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="testimonial_active_wrapper">
-                       
+
                         <div class="testimonial_active">
-                            
+
                             <div class="single_testimonial text-center">
                                 <img src="{{asset('img/faces/mark.png')}}" alt="author">
                                 <h5 class="author_name">Mark Feliciano</h5>
@@ -328,7 +330,7 @@
                                 <img src="{{asset('img/faces/leds4.png')}}" alt="author">
                                 <h5 class="author_name">Gerome R. Toledo</h5>
                                 <span class="TitleAuthor">Back-end Developer / 3D Graphics</span>
-                                <p class="col-lg-12 p-5 text-center">I am a junior programmer eager to learn and grow in the field of software development. 
+                                <p class="col-lg-12 p-5 text-center">I am a junior programmer eager to learn and grow in the field of software development.
                                 I have a solid foundation in programming concepts and have experience with a few programming languages.</p>
                                     <span class="iconMedia">
                                         <i class="fa-brands fa-facebook"></i>
@@ -344,7 +346,7 @@
                                 <img src="{{asset('img/faces/hanna.jpg')}}" alt="author">
                                 <h5 class="author_name">Princess Hanna C. Dorupa</h5>
                                 <span>Documentation and Photography</span>
-                                <p class="col-lg-12 p-5 text-center">I am an average leader who strives to inspire and guide my team towards success. 
+                                <p class="col-lg-12 p-5 text-center">I am an average leader who strives to inspire and guide my team towards success.
                                 I may not possess extraordinary leadership qualities, but I am dedicated to creating a positive and collaborative work environment.</p>
                                     <span class="iconMedia">
                                         <i class="fa-brands fa-facebook"></i>
@@ -360,7 +362,7 @@
                                 <img src="{{asset('img/faces/kurt.jpg')}}" alt="author">
                                 <h5 class="author_name">Kurt Chester R. Veloso</h5>
                                 <span>Documentation and Photography</span>
-                                <p class="col-lg-12 p-5 text-center">I am an average 3D renderer with a decent understanding of 3D modeling and rendering techniques. 
+                                <p class="col-lg-12 p-5 text-center">I am an average 3D renderer with a decent understanding of 3D modeling and rendering techniques.
                                 I have experience working with various software and tools commonly used in the industry.</p>
                                     <span class="iconMedia">
                                         <i class="fa-brands fa-facebook"></i>
@@ -376,7 +378,7 @@
                                 <img src="{{asset('img/faces/airah.jpg')}}" alt="author">
                                 <h5 class="author_name">Airah Mirabueno</h5>
                                 <span>Documentation and Photography</span>
-                                <p class="col-lg-12 p-5 text-center">I am an average typist with moderate typing speed and accuracy. 
+                                <p class="col-lg-12 p-5 text-center">I am an average typist with moderate typing speed and accuracy.
                                 I can comfortably type without looking at the keyboard and have a decent understanding of proper typing techniques.
                                  While I may not be the fastest typist, I am consistent and reliable in my typing abilities.</p>
                                     <span class="iconMedia">
@@ -389,7 +391,7 @@
                                     </span>
                                     <h1 class="text-white text-center p-4">About Us</h1>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -418,7 +420,7 @@
                                         Your message was sent, thank you!
                                     </div>
 
-                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">                        
+                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                                         <div class="row">
                                             <div class="form-group">
                                                 <i class="fa-solid fa-user-pen icon"></i>
@@ -493,7 +495,7 @@
             </div>
         </div>
     </section>
-<!-- 
+<!--
     <footer id="footer" class="footer_area">
         <div class="container">
             <div class="footer_wrapper text-center d-lg-flex align-items-center justify-content-between">
@@ -516,6 +518,28 @@
     <script>
         $('.carousel').carousel();
     </script>
+    <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('gate');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
 
     <script src="{{asset('js/bootstrap.bundle-5.0.0-beta1.min.js')}}"></script>
 
@@ -524,7 +548,7 @@
     <script src="{{asset('js/wow.min.js')}}"></script>
 
     <script src="{{asset('js/main.js')}}"></script>
-    <script>(function () { var js = "window['__CF$cv$params']={r:'806f01c189e78b7b',t:'MTY5NDc2MTM3NS42NzIwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);"; 
+    <script>(function () { var js = "window['__CF$cv$params']={r:'806f01c189e78b7b',t:'MTY5NDc2MTM3NS42NzIwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
     var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854"

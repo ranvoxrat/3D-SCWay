@@ -1,4 +1,4 @@
-<div class="page-header p-0">
+<!-- <div class="page-header p-0">
             <h3 class="page-title">
               <span class="page-title-icon bg-danger text-white ">
                 <i class="mdi mdi-home"></i>
@@ -11,7 +11,7 @@
                 </li>
               </ul>
             </nav>
-</div>
+</div> -->
 <div class="d-flex justify-content-end">
     <!-- Add Hotspot -->
     <div class="modal fade" id="addScene">
@@ -115,13 +115,17 @@
 </div> -->
 <div class="card">
    <div class="card-body p-3">
-    <button class="btn btn-sm bg-success d-block" data-toggle="modal" data-target="#addScene"><i class="fa-solid fa-plus"></i></button>
+    <div class="d-flex justify-content-between align-items-center h-25">
+    <h1>Manage Hotspot</h1>
+    <span class="line"></span>
+    <button class="btnAdd" data-toggle="modal" data-target="#addScene"><i class="fa-solid fa-plus"></i> Add</button>
+   
+    </div>
    <div class="table-responsive text-black" style="width:100%">
-   <caption>List of Hotspot</caption>
 <table id="example" class="table table-borderless align-middle hotspotTable" style="width:100%">
 
 <thead class="bg-danger text-white">
-            <tr class="align-center">
+            <tr class="align-center p-4">
             <th>No.</th>
             <th>Origin of Scene</th>
             <th>Target Scene</th>
@@ -273,7 +277,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-danger">
-                <h5 class="modal-title fs-3 fw-italic"><i class="fa-solid fa-pen-to-square fs-3"></i> Scene Configuration</h5>
+                <h5 class="modal-title fs-3 fw-italic"><i class="fa-solid fa-pen-to-square fs-3"></i> Hotspot Configuration</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
             <div class="modal-body">

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/adminControl.css')}}">
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('adminMobile.css')}}" media="(max-width:768px)">
-  
+    <link rel="shortcut icon" href="{{asset('img/bulsu-logo.png')}}" type="image/png">
     <script src="{{asset('js/wow.min.js')}}"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
