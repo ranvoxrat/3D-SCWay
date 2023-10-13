@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/addScenes', 'SceneController@addSceneCampus')->name('addScenes');
     Route::get('/addHotspots', 'HotspotController@addHotspt')->name('addHotspots');
+    Route::get('/createaccount', 'CreateAccountController@index')->name('createAccount');
 
     Route::get('/profile', 'UserController@index')->name('profil');
     Route::get('/ubahPassword', 'PasswordController@index')->name('ubahPassword');
