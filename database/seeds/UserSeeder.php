@@ -17,9 +17,16 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name'      => 'admin',
-            'username'  => 'admin',
-            'password'  => Hash::make('Admin987'),
+            'profile'=>'mark.png',
+            'type'=>'Admin',
+            'status'=>'Active',
+            'fname'=>'Mark',
+            'lname'=>'Feliciano',
+            'age'=>'20',
+            'gender'=>'Male',
+            'address'=>'San Jose Del Monte Bulacan',
+            'username' => 'admin',
+            'password'=> Hash::make('admin123'),
             'remember_token' => null,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()

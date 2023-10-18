@@ -156,10 +156,6 @@
                 <form action="{{ route('editScene', ['id' => $item->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-
-                    @if ($errors->any())
-                      
-                    @endif
                     <div class="form-group">
                         <label for="image" class=" d-flex justify-content-left">Image</label>
                         <img class="card-img-top img-fluid" src="{{asset('/img/uploads/' . $item->image)}}">

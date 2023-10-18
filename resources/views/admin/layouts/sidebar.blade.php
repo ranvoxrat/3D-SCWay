@@ -1,14 +1,17 @@
+
 <ul class="nav">
           <li class="nav-item nav-profile">
             <a href="{{ route('profil') }}" class="nav-link">
               <div class="nav-profile-image">
-                <img src="{{asset('img/faces/mark.png')}}" alt="profile">
+            
+                <img src="{{asset('img/faces/'.Auth::user()->profile) }}" alt="profile">
+              
                 <span class="login-status online"></span>
  
               </div>
               <div class="nav-profile-text d-flex flex-column">
-                <span class="font-weight-bold mb-2">Mark Feliciano</span>
-                <span class="text-secondary text-small">Admin</span>
+                <span class="font-weight-bold mb-2">{{Auth::user()->fname}} {{Auth::user()->lname}}</span>
+                <span class="text-secondary text-small">{{Auth::user()->type}}</span>
               </div>
               <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
             </a>
@@ -26,15 +29,17 @@
               <i class="menu-arrow"></i>
               <i class="fa-solid fa-user menu-icon"></i>
             </a>
+          
             <div class="collapse" id="Accounts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item {{ Request::routeIs('createAccount') ? 'active' : '' }}"> 
-                    <a class="nav-link" href="{{ route('createAccount')}}">Create Account</a>
+                <li class="nav-item {{ Request::routeIs('createAccountUser') ? 'active' : '' }}"> 
+                    <a class="nav-link" href="{{ route('createAccountUser')}}">Create Account</a>
                   </li>
                 <li class="nav-item"> <a class="nav-link" href="">Update Password</a>
                 </li>
               </ul>
             </div>
+       
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#buidlings" aria-expanded="false"

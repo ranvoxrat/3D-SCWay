@@ -47,6 +47,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect()->route('register')->with('success','Akun Anda Berhasil Dihapus');
+        return redirect()->route('register')->with('success','Account Register Success');
     }
 }

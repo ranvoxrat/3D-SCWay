@@ -10,6 +10,7 @@
 
     <div class="main-content-inner">
         <div class="sales-report-area mt-5 mb-5">
+            @include('sweetalert::alert')
             @yield('content')
         </div>
     </div>

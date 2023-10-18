@@ -30,6 +30,9 @@
 
         {{-- Script --}}
         <script src="{{asset('js/modernizr.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>    
 
         {{-- Pannellum--}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
@@ -73,7 +76,7 @@
                     </label>
                     <div class="border"></div>
                    
-                                 <button class="micButton" type="search" name="btnsearch" id="btnsearch"><i class="fa-solid fa-location-arrow"></i></button>
+                        <button class="micButton" type="search" name="btnsearch" id="btnsearch" ><i class="fa-solid fa-location-arrow"></i></button>
                        
                     </form>
                    
@@ -235,82 +238,29 @@ if (DB::connection()->getPdo()) {
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-<script>
-   $(document).ready(function() {
-    $('#search-input').on('input', function() {
-        var query = $(this).val();
-        if (query.length >= 4) {
-            $.ajax({
-                url: "{{ route('autocomplete') }}",
-                method: "GET",
-                data: { query: title },
-                success: function(response) {
-                    var results = response;
-
-                    var suggestions = '';
-                    results.forEach(function(result) {
-                        suggestions += '<div class="suggestion">' + result.column + '</div>';
-                    });
-
-                    $('#search-results').html(suggestions);
-                }
-            });
-        } else {
-            $('#search-results').empty();
+<script type="text/javascript">
+    $('#search-input').select2({
+        placeholder: 'Search Building...',
+        ajax: {
+            url: "{{route('searchdata')}}",
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                   
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.title,
+                            id: item.id,
+                            loadScene(data)
+                        }
+                    })
+                };
+            },
+            cache: true
         }
     });
-});
 
-
-// $(function () {
-//    $('#btnsearch').on('click', function () {
-//       $.ajax({
-//          url: "{{ route('get.data') }}",
-//          method: "GET",
-//          success: function(response) {
-//             alert(JSON.stringify(response));
-//          },
-//          error: function(xhr, status, error) {
-//             console.error(error);
-//          }
-//       });
-//    });
-// });
-
-
-//    $(function () {
-//       $('#btnsearch').on('click', function () {
-//          $.ajax({
-//             url: "{{ route('autocomplete') }}",
-//             method: "GET",
-//          success: function(response) {
-//            alert(JSON.stringify(response));
-//     },
-//     error: function(xhr, status, error) {
-//         // Handle any errors that occur during the request
-//         console.error(error);
-//     }
-//          });
-//       });
-//    });
-
-
-
-/*function showHint(str) {
-    if (str.length == 0) {
-        document.getElementById("search").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("search").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET", "{{route('autocomplete')}}?q=" + str, true);
-        xmlhttp.send();
-    }
-}*/
 </script>
     <script>
         var load = pannellum.viewer('pannellum', {
@@ -324,7 +274,6 @@ if (DB::connection()->getPdo()) {
                 "hotSpotDebug":true,
                 "disableKeyboardCtrl":true
             },
-
             "scenes": { @foreach($scenes as $scene)
                 "{{$scene->id}}": {
                     "title": "{{$scene->title}}",

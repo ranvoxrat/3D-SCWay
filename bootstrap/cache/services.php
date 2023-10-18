@@ -26,19 +26,20 @@
     22 => 'Facade\\Ignition\\IgnitionServiceProvider',
     23 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     24 => 'Fruitcake\\Cors\\CorsServiceProvider',
-    25 => 'Laravel\\Scout\\ScoutServiceProvider',
+    25 => 'Laravel\\Breeze\\BreezeServiceProvider',
     26 => 'Laravel\\Tinker\\TinkerServiceProvider',
     27 => 'Laravel\\Ui\\UiServiceProvider',
     28 => 'Carbon\\Laravel\\ServiceProvider',
     29 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     30 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
-    31 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    31 => 'Laratrust\\LaratrustServiceProvider',
     32 => 'Yajra\\DataTables\\DataTablesServiceProvider',
-    33 => 'App\\Providers\\AppServiceProvider',
-    34 => 'App\\Providers\\AuthServiceProvider',
-    35 => 'App\\Providers\\EventServiceProvider',
-    36 => 'App\\Providers\\RouteServiceProvider',
-    37 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    33 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    34 => 'App\\Providers\\AppServiceProvider',
+    35 => 'App\\Providers\\AuthServiceProvider',
+    36 => 'App\\Providers\\EventServiceProvider',
+    37 => 'App\\Providers\\RouteServiceProvider',
+    38 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
   ),
   'eager' => 
   array (
@@ -55,11 +56,11 @@
     10 => 'Facade\\Ignition\\IgnitionServiceProvider',
     11 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     12 => 'Fruitcake\\Cors\\CorsServiceProvider',
-    13 => 'Laravel\\Scout\\ScoutServiceProvider',
-    14 => 'Laravel\\Ui\\UiServiceProvider',
-    15 => 'Carbon\\Laravel\\ServiceProvider',
-    16 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    17 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    13 => 'Laravel\\Ui\\UiServiceProvider',
+    14 => 'Carbon\\Laravel\\ServiceProvider',
+    15 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    16 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    17 => 'Laratrust\\LaratrustServiceProvider',
     18 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     19 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     20 => 'App\\Providers\\AppServiceProvider',
@@ -190,6 +191,7 @@
     'translation.loader' => 'Illuminate\\Translation\\TranslationServiceProvider',
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
+    'Laravel\\Breeze\\Console\\InstallCommand' => 'Laravel\\Breeze\\BreezeServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
   ),
   'when' => 
@@ -228,6 +230,9 @@
     array (
     ),
     'Illuminate\\Validation\\ValidationServiceProvider' => 
+    array (
+    ),
+    'Laravel\\Breeze\\BreezeServiceProvider' => 
     array (
     ),
     'Laravel\\Tinker\\TinkerServiceProvider' => 

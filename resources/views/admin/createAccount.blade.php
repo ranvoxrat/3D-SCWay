@@ -18,10 +18,25 @@
           </ul>
       </nav>
     </div>
-    <div class="d-flex">
+
+      <form action="{{route('createAccount')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                        <div class="alert-dismiss">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>{{ $error }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span class="fa fa-times"></span>
+                                </button>
+                            </div>
+                        </div>
+                        @endforeach
+                    @endif
+      <div class="d-flex">
         <div class="cards">
             <div class="cards__img"><svg xmlns="http://www.w3.org/2000/svg" width="100%">
-                
+
                     <rect fill="#ffffff" width="540" height="450"></rect>
                     <defs>
                         <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="0" y1="0" y2="100%"
@@ -108,29 +123,27 @@
                     <rect x="0" y="0" fill="url(#b)" width="100%" height="100%"></rect>
                 </svg></div>
             <div class="cards__avatar">
-                <img src="{{asset('img/profile.jpg')}}" alt="profile">
+                <img src="{{asset('img/pro.png')}}" class="profile-pic" alt="profile" id="imgprofile" name="imgprofile">
                 <div class="p-image">
                           <i class="fa fa-camera upload-button"></i>
-                          <input class="file-upload" type="file" accept="image/*" id="image-upload" name="image" required
-                          onchange="previewImage()" accept="image/*" required />
-                                </div>
-        
-                </div>
+                          <input class="file-upload" type="file" accept="image/*" name="profile" onchange="previewImage()" accept="image/*" required />
+                    </div>
+            </div>
             <div class="cards__title">ADD PROFILE</div>
             <div class="d-flex flex-row text-black mb-1 p-2">
                 <label for="scene" class="m-0 position-relative fw-normal">Type: </label>
-                <select class="border-top-0 border-start-0 border-end-0 border-bottom-0 text-center ml-3" name="targetScene" required>
-                    <option value="" disabled selected>Select</option>
-                    <option value="Staff">Staff</option>
-                    <option value="Admin">Admin</option>
+                <select class="border-top-0 border-start-0 border-end-0 border-bottom-0 text-center ml-3" name="type" required>
+                    <option disabled selected>Select</option>
+                    <option value="Admin" name="type">Admin</option>
+                    <option value="Staff" name="type">Staff</option>                   
                 </select>
             </div>
             <div class="d-flex flex-row text-black mb-1 p-2">
                 <label for="scene" class="m-0 position-relative fw-normal">Status: </label>
-                <select class="border-top-0 border-start-0 border-end-0 border-bottom-0 text-center ml-3" name="targetScene" required>
+                <select class="border-top-0 border-start-0 border-end-0 border-bottom-0 text-center ml-3" name="status" required>
                     <option value="" disabled selected>Select</option>
-                    <option value="Staff">Active</option>
-                    <option value="Admin">Inactive</option>
+                    <option value="Active" name="status">Active</option>
+                    <option value="Inactive" name="status">Inactive</option>
                 </select>
             </div>
         </div>
@@ -176,14 +189,14 @@
                         </div>
                         <div class="d-flex col-lg col-md col-sm">
                             <div class="groupinput">
-                                <label for="fname">Username</label>
+                                <label for="username">Username</label>
                                 <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center"
-                                    placeholder="Firstname" type="text" name="fname" autocomplete="off" required>
+                                    placeholder="Username" type="text" name="username" required autocomplete="off" >
                             </div>
                             <div class="groupinput">
-                                <label for="lname">Password</label>
+                                <label for="password">Password</label>
                                 <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center"
-                                    placeholder="Lastname" type="text" name="lname" autocomplete="off" required>
+                                    placeholder="Password" type="password" name="password" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end col-lg col-md col-sm">
@@ -194,7 +207,46 @@
                 </div>
             </div>
         </div>
+
     </div>
+    </form>
 </div>
+
 @endsection
-  
+@push('script')
+<script>
+$(document).ready(function() {
+var readURL = function(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.profile-pic').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+$(".file-upload").on('change', function(){
+    readURL(this);
+});
+
+$(".upload-button").on('click', function() {
+   $(".file-upload").click();
+  });
+});
+function previewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("profile").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("imgprofile").src = oFREvent.target.result;
+            };
+        };
+    </script>
+     <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+@endpush

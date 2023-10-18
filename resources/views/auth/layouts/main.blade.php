@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{{asset('fontawesome-free-6.4.0-web/css/all.min.css')}}">
 </head>
 <body>
-
+@include('sweetalert::alert')
     @yield('content')
-
+    
     @include('admin.layouts.scripts')
 </body>
 </html>

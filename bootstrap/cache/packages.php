@@ -24,11 +24,11 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
-  'laravel/scout' => 
+  'laravel/breeze' => 
   array (
     'providers' => 
     array (
-      0 => 'Laravel\\Scout\\ScoutServiceProvider',
+      0 => 'Laravel\\Breeze\\BreezeServiceProvider',
     ),
   ),
   'laravel/tinker' => 
@@ -68,6 +68,17 @@
     'aliases' => 
     array (
       'Alert' => 'RealRashid\\SweetAlert\\Facades\\Alert',
+    ),
+  ),
+  'santigarcor/laratrust' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laratrust\\LaratrustServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Laratrust' => 'Laratrust\\LaratrustFacade',
     ),
   ),
   'yajra/laravel-datatables-oracle' => 

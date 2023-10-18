@@ -37,11 +37,13 @@
             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown"
               aria-expanded="false">
               <div class="nav-profile-img">
-                <img src="{{asset('img/faces/mark.png')}}" alt="image">
+             
+                <img src="{{asset('img/faces/'.Auth::user()->profile) }}" alt="image">
+              
                 <span class="availability-status online"></span>
               </div>
               <div class="nav-profile-text">
-                <p class="mb-1 text-black">Mark Feliciano</p>
+                <p class="mb-1 text-black">  {{Auth::user()->fname}} {{Auth::user()->lname}}</p>
               </div>
             </a>
             <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">

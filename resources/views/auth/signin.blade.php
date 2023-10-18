@@ -3,29 +3,18 @@
 @section('title', 'Login Form')
 
 @section('content')
+
 <div class="container">
         <div class="cover">
-           
             <div class="front">
-                
-                <div class="text">                 
+                <div class="text">
                 </div>
-                <div class="text2">                 
+                <div class="text2">
                 </div>
                 <div class="infoText">
- <!-- <span class="bulsuLogo"></span> -->
-                    <!-- <img src="{{asset('img/bulsu-logo.png')}}" alt="" id="bulsuLogo"> -->
-                    <!-- <img src="../assets/images/background2.png" alt="rightLogo" id="rigthLogo" > -->
-                    
                         <h1>SC-Way</h1>
                         <h4>A <span>3D</span> Campus Guide</h4>
                         <h5>In BULSU-SC</h5>
-                    
-                  
-                    <!-- <img src="{{asset('')}}" width="70%" alt=""> -->
-                    <!-- <img src="images/logo/bag.png" alt="">  -->
-                    
-
                 </div>
             </div>
         </div>
@@ -36,9 +25,9 @@
                         <h1>Login<i class="fa-solid fa-arrow-right"></i></h1>
                    </div>
                    <p class="t1">Login your account</p>
-                    <form action=" " method="POST">
+                    <form method="POST" >
                     @csrf
-                
+                    @method('POST')
                         <div class="input-boxes">
                             <div class="input-box">
                                 <i class="fa-sharp fa-solid fa-lock"></i>
@@ -50,7 +39,30 @@
                                 <input type="password" placeholder="Enter Password" name="password" id="password"
                                     required autocomplete="off">
                             </div>
-                            <button id="form_submit" type="submit">Login
+                            @if ($errors->any())
+                                <div class="alert-dismiss">
+                                    <div class="alert alert-danger" role="alert">
+                                        <strong>{{ $errors->first() }}</strong>
+                                    </div>
+                                </div>
+                            @endif
+                            @if ($message = Session::get('success'))
+                                <div class="alert-dismiss">
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span class="fa fa-times"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            @endif
+
+               
+
+
+                           
+
+                            <button id="form_submit" type="submit" onclick="confirmDelete()">Login
                                 <div class="star-1">
                                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
                                         style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
@@ -148,28 +160,11 @@
 
                 <div class="login-form-body">
 
-                @if ($message = Session::get('success'))
-                    <div class="alert-dismiss">
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>{{ $message }}</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span class="fa fa-times"></span>
-                            </button>
-                        </div>
-                    </div>
-                @endif
-
-                @if ($errors->any())
-                    <div class="alert-dismiss">
-                        <div class="alert alert-danger" role="alert">
-                            <strong>{{ $errors->first() }}</strong>
-                        </div>
-                    </div>
-                @endif
                 
+
                     <div class="form-gp">
                         <label for="username">Username</label>
-                        <input id="username" type="username" 
+                        <input id="username" type="username"
                             name="username" value="{{ old('username') }}" required>
                         <i class="ti-user"></i>
                         <div class="text-danger"></div>
@@ -191,4 +186,5 @@
         </div>
     </div>
 </div> -->
+
 @endsection

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 use App\Scene;
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Scene;
 */
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth']], function () {
  
     Route::get('/admin', 'HomeController@index')->name('home');
    
@@ -24,7 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/addScenes', 'SceneController@addSceneCampus')->name('addScenes');
     Route::get('/addHotspots', 'HotspotController@addHotspt')->name('addHotspots');
-    Route::get('/createaccount', 'CreateAccountController@index')->name('createAccount');
+    Route::get('/Profile', 'CreateAccountController@index')->name('createAccountUser');
+    Route::post('/createAccount', 'CreateAccountController@createAccount')->name('createAccount');
 
     Route::get('/profile', 'UserController@index')->name('profil');
     Route::get('/ubahPassword', 'PasswordController@index')->name('ubahPassword');
@@ -55,6 +57,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/', 'SceneController@Welcome')->name('welcome');
 Route::get('/interface', 'MainInterfaceController@interface')->name('mainpage');
-// Route::get('/search', 'MainInterfaceController@index')->name('search');
+//Route::get('/search', 'search@index')->name('search');
 Route::get('/autoComplete', 'MainInterfaceController@SearchData')->name('autocomplete');
 Route::get('/get-data', 'MainInterfaceController@getData')->name('get.data');
+Route::get('/search', [search::class, 'index']);
+Route::get('/ajax-autocomplete-search', 'search@selectSearch')->name('searchdata');
