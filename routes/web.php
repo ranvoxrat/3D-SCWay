@@ -16,7 +16,9 @@ use App\Scene;
 */
 Auth::routes();
 
-Route::group(['middleware' => ['auth']], function () {
+
+
+Route::group(['middleware' => ['auth','Admin']], function () {
  
     Route::get('/admin', 'HomeController@index')->name('home');
    
@@ -27,6 +29,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/addHotspots', 'HotspotController@addHotspt')->name('addHotspots');
     Route::get('/Profile', 'CreateAccountController@index')->name('createAccountUser');
     Route::post('/createAccount', 'CreateAccountController@createAccount')->name('createAccount');
+
+    Route::get('/Account','ManageAccountController@index')->name('adminAccount');
+    Route::get('/showprofile','ManageAccountController@showAccount')->name('adminAccountManage');
+    Route::put('/setFScene/{id}', 'ManageAccountController@status')->name('accountprofile');
 
     Route::get('/profile', 'UserController@index')->name('profil');
     Route::get('/ubahPassword', 'PasswordController@index')->name('ubahPassword');
@@ -54,6 +60,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/delHotspot/{id}', 'HotspotController@destroy')->name('delHotspot');
  
 });
+
 
 Route::get('/', 'SceneController@Welcome')->name('welcome');
 Route::get('/interface', 'MainInterfaceController@interface')->name('mainpage');

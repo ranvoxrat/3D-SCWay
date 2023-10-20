@@ -22,6 +22,7 @@
               <i class="fa-solid fa-house menu-icon"></i>
             </a>
           </li>
+          @if(Auth::user()->role=='Admin')
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#Accounts" aria-expanded="false"
               aria-controls="Accounts">
@@ -38,12 +39,31 @@
                 <li class="nav-item"> <a class="nav-link" href="">Update Password</a>
                 </li>
               </ul>
-            </div>
-       
+            </div>    
           </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ManageAccounts" aria-expanded="false"
+              aria-controls="ManageAccounts">
+              <span class="menu-title">Manage Account</span>
+              <i class="menu-arrow"></i>
+              <i class="fa-solid fa-user menu-icon"></i>
+            </a>
+          
+            <div class="collapse" id="ManageAccounts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item {{ Request::routeIs('adminAccount') ? 'active' : '' }}"> 
+                    <a class="nav-link" href="{{ route('adminAccount')}}">Admin</a>
+                  </li>
+                <li class="nav-item"> <a class="nav-link" href="">Staff</a>
+                </li>
+              </ul>
+            </div>    
+          </li>
+          @endif
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#buidlings" aria-expanded="false"
-              aria-controls="Accounts">
+              aria-controls="ManageAccounts">
               <span class="menu-title">Manage Campus</span>
               <i class="menu-arrow"></i>
               <i class="fa-solid fa-building menu-icon"></i>
