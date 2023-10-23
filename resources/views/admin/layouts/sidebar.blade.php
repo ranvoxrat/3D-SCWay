@@ -22,13 +22,13 @@
               <i class="fa-solid fa-house menu-icon"></i>
             </a>
           </li>
-          @if(Auth::user()->role=='Admin')
+          
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#Accounts" aria-expanded="false"
               aria-controls="Accounts">
               <span class="menu-title">Account</span>
               <i class="menu-arrow"></i>
-              <i class="fa-solid fa-user menu-icon"></i>
+              <i class="fa-solid fa-user-pen menu-icon"></i>
             </a>
           
             <div class="collapse" id="Accounts">
@@ -36,7 +36,7 @@
                 <li class="nav-item {{ Request::routeIs('createAccountUser') ? 'active' : '' }}"> 
                     <a class="nav-link" href="{{ route('createAccountUser')}}">Create Account</a>
                   </li>
-                <li class="nav-item"> <a class="nav-link" href="">Update Password</a>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('changePass')}}">Update Password</a>
                 </li>
               </ul>
             </div>    
@@ -47,7 +47,7 @@
               aria-controls="ManageAccounts">
               <span class="menu-title">Manage Account</span>
               <i class="menu-arrow"></i>
-              <i class="fa-solid fa-user menu-icon"></i>
+              <i class="fa-solid fa-user-shield menu-icon"></i>
             </a>
           
             <div class="collapse" id="ManageAccounts">
@@ -60,7 +60,12 @@
               </ul>
             </div>    
           </li>
-          @endif
+          <li class="nav-item  {{ Request::routeIs('minimap') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('minimap')}}">
+              <span class="menu-title">Upload Campus Map</span>
+              <i class="fa-solid fa-map menu-icon"></i>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#buidlings" aria-expanded="false"
               aria-controls="ManageAccounts">
@@ -70,17 +75,13 @@
             </a>
             <div class="collapse" id="buidlings">
               <ul class="nav flex-column sub-menu">
+                <li class="nav-item {{ Request::routeIs('uploadMinimap') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('uploadMinimap')}}">Campus Map</a></li>
                 <li class="nav-item {{ Request::routeIs('config') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('config')}}">Scene</a></li>
                 <li class="nav-item {{ Request::routeIs('configHotspot') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('configHotspot')}}">hotspot</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <span class="menu-title">About</span>
-              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
               <span class="menu-title">Sign out</span>

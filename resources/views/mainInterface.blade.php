@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{{asset('css/interface.css')}}">
         {{-- Icon --}}
         <link rel="shortcut icon" href="{{asset('img/bulsu-logo.png')}}" type="image/png">
-
+        <link rel="stylesheet" media="(max-width:768px)" href="{{asset('css/mobile.css')}}">
 
         <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />

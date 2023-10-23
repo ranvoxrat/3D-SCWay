@@ -1,3 +1,4 @@
+@include('sweetalert::alert')
 @extends('admin.main')
 
 @section('title', 'Create Account')
@@ -21,6 +22,16 @@
 
       <form action="{{route('createAccount')}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @if ($message = Session::get('success'))
+                    <div class="alert-dismiss">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ $message }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span class="fa fa-times"></span>
+                            </button>
+                        </div>
+                    </div>
+                @endif
                     @if ($errors->any())
                         @foreach ($errors->all() as $error)
                         <div class="alert-dismiss">
@@ -196,7 +207,7 @@
                             <div class="groupinput">
                                 <label for="password">Password</label>
                                 <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center"
-                                    placeholder="Password" type="password" name="spassword" autocomplete="off" required>
+                                    placeholder="Password" type="password" name="password" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end col-lg col-md col-sm">

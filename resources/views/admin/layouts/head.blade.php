@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/uploadFile.css')}}">
+    <link rel="stylesheet" href="{{asset('css/profileModal.css')}}">
 
     <link rel="stylesheet" href="{{asset('vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendors/vendors/css/vendor.bundle.base.css')}}">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="{{asset('adminMobile.css')}}" media="(max-width:768px)">
     <link rel="shortcut icon" href="{{asset('img/bulsu-logo.png')}}" type="image/png">
     <script src="{{asset('js/wow.min.js')}}"></script>
-
+    
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.25/b-1.7.1/sl-1.3.3/datatables.min.css"/>
     <!-- Jquery -->

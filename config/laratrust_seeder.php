@@ -11,16 +11,20 @@ return [
      */
     'truncate_tables' => true,
 
-    'roles_structure' => [
-        'Admin' => [
-            'users' => 'c,r,u,d',
-            'account' => 'c,r,u,d',
-            'profile' => 'r,u'
+    'role_structure' => [
+        'admin' => [
+        'users' => 'c,r,u,d',
+        'acl' => 'c,r,u,d',
+        'profile' => 'r,u'
         ],
-        'Staff' => [
-            'profile' => 'r,u',
-        ]
-    ],
+        'staff' => [
+        'users' => 'c,r,u,d',
+        'profile' => 'r,u'
+        ],
+        'user' => [
+        'profile' => 'r,u'
+        ],
+        ],
 
     'permissions_map' => [
         'c' => 'create',

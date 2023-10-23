@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use RealRashid\SweetAlert\Facades\Alert;
 class CreateAccountController extends Controller
+
 {
 
     public function index(){
-        $user = User::all();
-        return view('admin.createAccount',compact('user'));
+           
+            return view('admin.createAccount');
     }
     protected function createAccount(Request $request){
         $request->validate([
@@ -23,7 +25,7 @@ class CreateAccountController extends Controller
             'address' => 'required|min:-360|max:360',
             'username' => 'required|unique:users',
             'password' => 'required|same:password',
-            'profile' => 'required|image|min:-360|max:360'
+            'profile' => 'required'
         ]);
        
         $file = $request->file('profile');
@@ -44,7 +46,9 @@ class CreateAccountController extends Controller
             'password' => Hash::make($request['password']),
             'profile' => $file_name
         ]);
-       return redirect()->route('profil')->with('success', 'Scene Added Successfuly');
+       
+       return redirect()->route('profil')->with('success','You\'ve Successfully Registered');
+
     }
    
 }

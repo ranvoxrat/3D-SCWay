@@ -3,67 +3,58 @@
 @section('title', 'Change Password')
 
 @section('content')
-@if ($message = Session::get('success'))
-    <div class="alert-dismiss">
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{ $message }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span class="fa fa-times"></span>
-            </button>
-        </div>
+<div class="content-wrapper m-0">
+<div class="card">
+    
+    <div class="card-body pt-3">
+    <div class="d-flex justify-content-between align-items-center h-25">
+    <h1>Change Password <i class="fa-regular fa-pen-to-square"></i></h1>
+    <span class="line"></span>
     </div>
-@endif
-
-@if ($errors->any())
-    @foreach ($errors->all() as $error)
-    <div class="alert-dismiss">
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>{{ $error }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span class="fa fa-times"></span>
-            </button>
-        </div>
-    </div>
-    @endforeach
-@endif
-
-<div class="container rounded bg-white mt-5">
-    <div class="row">
-        <div class="col-md-1">
-            <div class="d-flex flex-colu mn align-items-center text-center p-3 py-5">
-                
-            </div>
-        </div>
-        <div class="col-md-10">
-            <div class="p-3 py-5">
-                <h3>Ubah Password</h3>
-                <br><br>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                        <a href="javascript:history.back()">Kembali</a>
+    <form action="{{ route('changePassword') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @if ($message = Session::get('success'))
+                    <div class="alert-dismiss">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ $message }}</strong>
+                            <button type="button" class="close" data-dismiss="a
+                            lert" aria-label="Close">
+                                <span class="fa fa-times"></span>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <form method="POST" action="{{ route('changePassword') }}">
-                    @csrf 
-
-                    <div>
-                        <br><label for="passwordLama">Password Lama:</label><br>
-                        <div class="col-md-8"><input type="password" class="form-control" minlength="8" name="passwordLama" required></div>
-                    </div><br>
-                    <div>
-                        <label for="passwordBaru">Password Baru:</label><br>
-                        <div class="col-md-8"><input type="password" class="form-control" minlength="8" name="passwordBaru" required></div>
-                    </div><br>
-                    <div>
-                        <label for="konfirmasiPasswordBaru">Konfirmasi Password Baru: </label><br>
-                        <div class="col-md-8"><input type="password" class="form-control" minlength="8" name="konfirmasiPasswordBaru" required></div>
+                @endif
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                        <div class="alert-dismiss">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>{{ $error }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span class="fa fa-times"></span>
+                                </button>
+                            </div>
+                        </div>
+                        @endforeach
+                    @endif
+                    <div class="d-flex flex-column text-black mb-1 p-2">
+                        <label for="title" class="m-0 position-relative fw-normal ">Old Password</label>
+                        <input class="border-top-0 border-start-0 border-end-0 text-center" type="text" name="oldpassword"autocomplete="off"  required>
                     </div>
-                    <div class="mt-5 text-right">
-                        <button class="btn btn-primary profile-button" type="submit">Ubah</button>
+                    <div class="d-flex flex-column text-black mb-1 p-2">
+                        <label for="title" class="m-0 position-relative fw-normal ">New Password</label>
+                        <input class="border-top-0 border-start-0 border-end-0 text-center" type="text" name="newpassword"autocomplete="off"  required>
                     </div>
-                </form>   
-            </div>
-        </div>
+                    <div class="d-flex flex-column text-black mb-1 p-2">
+                        <label for="title" class="m-0 position-relative fw-normal ">Confirm Password</label>
+                        <input class="border-top-0 border-start-0 border-end-0 text-center" type="text" name="confirmpass"autocomplete="off"  required>
+                    </div>
+                    <div class="modal-footer p-0 m-0">
+                        <button type="button" class="btn btn-md bg-danger" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Cancel</button>
+                        <button type="submit" class="btn btn-md bg-primary"><i class="fa-solid fa-check"></i> Update</button>
+                    </div>
+                </form>
     </div>
 </div>
+</div>
+
 @endsection

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('css/default.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" media="(max-width:768px)" href="{{asset('css/mobile.css')}}">
+    <link rel="stylesheet" media="(max-width:768px)" href="{{asset('css/mobileLandingpage.css')}}">
     <!-- <link rel="stylesheet" href="sam.css"> -->
 </head>
 
@@ -98,17 +98,15 @@
                                     <img class="fadeInUp" src="./assets/image/bulsu-logo.png" alt="bulsu" id="logo1">
                                     <img class="fadeInUp" src="./assets/image/logo.png" alt="bulsu" id="logo2">
                                 </div> -->
-                                <h2 class="hero_title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Welcome To</h2>
+                                <!-- <h2 class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Welcome To</h2>
                                 <h1 class="wow fadeInUp"><span>B</span>ulacan <span>S</span>tate <span>U</span>niversity</h1>
-                                <h3>Sarmiento Campus</h3>
+                                <h3>Sarmiento Campus</h3> -->
                                 <!-- <img class="fadeInUp" src="./assets/image/vec.png" alt="bulsu" width="50%" height="70px" >            -->
                                 <!-- <img class="fadeInUp position-relative" src="./assets/image/welcome.png" alt="bulsu" id="logo1"> -->
-                                <p class="text-align-left wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                                    The SC-WAY: A 3D campus guide in <span>Bulacan State University-Sarmiento
-                                        Campus</span>
+                                 <p class="text-align-left wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                                    <span class="textTitle">The SC-WAY: A 3D campus guide</span> <span class="curve">In</span><span class="fs-5">Bulacan State University-Sarmiento Campus</span>
                                     offers a virtual 3D tour of the campus, allowing users to
-                                    navigate through a 3D representation of the campus. Users will be able to access
-                                    a street view of the campus and explore it virtually by walking through it.
+                                    navigate through a 3D representation of the campus.
                                     <br class="d-none d-xl-block">
                                 </p>
                                 <a href="#features" class="btnExplore btn-danger wow fadeInUp" data-wow-duration="1.3s"

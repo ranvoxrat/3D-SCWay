@@ -4,7 +4,9 @@
 <body>
 <div class="container-scroller  text-white">
     <nav class="navbar default-layout-navbar col-lg-12 p-0 fixed-top d-flex flex-row navbar-success bg-danger ">
+    
       <div class="text-center bg-red navbar-brand-wrapper d-flex align-items-center justify-content-center ">
+
         <a class="logoText navbar-brand brand-logo align-items-center pt-3 pb-3" href="index.html">
           <!-- <span>
             <h1 class="text-white">3D SC-Way</h1>
@@ -18,13 +20,12 @@
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex justify-content-center align-items-center">
+      
+
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-menu"></span>
         </button>
-        <!-- <span class="Bulsu">
-          <p class="t-1">Bulacan State University</p>
-          <p class="t-2">Sarmiento Campus</p>
-        </span> -->
+        <span id='ct5'></span>
         <ul class="navbar-nav navbar-nav-right">
 
           <li class="nav-item d-none d-lg-block full-screen-link">
@@ -80,6 +81,21 @@
 </div>
     @include('admin.layouts.scripts')
     @stack('script')
+    <script>
+        function display_ct5() {
+        var x = new Date()
+        var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+        var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear(); 
+        x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds() + ":" + ampm;
+        document.getElementById('ct5').innerHTML = x1;
+        display_c5();
+        }
+        function display_c5(){
+        var refresh=1000; // Refresh rate in milli seconds
+        mytime=setTimeout('display_ct5()',refresh)
+        }
+        display_c5()
+      </script>
     <script>
         document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>

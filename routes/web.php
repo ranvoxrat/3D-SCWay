@@ -15,13 +15,9 @@ use App\Scene;
 |
 */
 Auth::routes();
-
-
-
-Route::group(['middleware' => ['auth','Admin']], function () {
- 
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/time', 'BladeServiceProvider@index')->name('time');
     Route::get('/admin', 'HomeController@index')->name('home');
-   
     Route::get('/configuration', 'SceneController@index')->name('config');
     Route::get('/ConfigHotspot', 'HotspotController@index')->name('configHotspot');
 
@@ -33,15 +29,22 @@ Route::group(['middleware' => ['auth','Admin']], function () {
     Route::get('/Account','ManageAccountController@index')->name('adminAccount');
     Route::get('/showprofile','ManageAccountController@showAccount')->name('adminAccountManage');
     Route::put('/setFScene/{id}', 'ManageAccountController@status')->name('accountprofile');
+    Route::put('/EditProfileAdmins/{id}', 'ManageAccountController@update')->name('EditProfileAdmin');
+    Route::put('/editprofile/{id}', 'ManageAccountController@show')->name('showprofiles');
+    Route::delete('/delProfile/{id}', 'ManageAccountController@destroy')->name('delProfile');
 
     Route::get('/profile', 'UserController@index')->name('profil');
-    Route::get('/ubahPassword', 'PasswordController@index')->name('ubahPassword');
+    Route::get('/changePass', 'PasswordController@index')->name('changePass');
+    Route::post('/changePass', 'PasswordController@store')->name('changePassword');
 
     Route::get('/dataScene', 'SceneController@dataScene')->name('dataScene');
     Route::get('/dataHotspot', 'SceneController@dataHotspot')->name('dataHotspot');
 
-    Route::post('/changePassword', 'PasswordController@store')->name('changePassword');
     Route::post('/addScene', 'SceneController@store')->name('addScene');
+
+    Route::get('/viewUpload', 'uploadMinimapController@index')->name('minimap');
+    Route::post('/upload', 'uploadMinimapController@uploadMap')->name('uploadMinimap');
+
     Route::post('/addHotspot', 'HotspotController@store')->name('addHotspot');
 
     Route::get('/showScene/{id}', 'SceneController@show')->name('showScene');
@@ -59,7 +62,9 @@ Route::group(['middleware' => ['auth','Admin']], function () {
     Route::delete('/delScene/{id}', 'SceneController@destroy')->name('delScene');
     Route::delete('/delHotspot/{id}', 'HotspotController@destroy')->name('delHotspot');
  
+    
 });
+
 
 
 Route::get('/', 'SceneController@Welcome')->name('welcome');
@@ -69,3 +74,4 @@ Route::get('/autoComplete', 'MainInterfaceController@SearchData')->name('autocom
 Route::get('/get-data', 'MainInterfaceController@getData')->name('get.data');
 Route::get('/search', [search::class, 'index']);
 Route::get('/ajax-autocomplete-search', 'search@selectSearch')->name('searchdata');
+

@@ -10,7 +10,7 @@ use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable implements LaratrustUser
 {
-    use HasRolesAndPermissions;
+
     use LaratrustUserTrait;
     use HasFactory, Notifiable;
 

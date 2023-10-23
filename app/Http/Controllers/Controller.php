@@ -7,12 +7,18 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use \Illuminate\Support\Facades\Facade;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
+
 class Controller extends BaseController
 {
 
     public function __construct()
     {
+        
         $this->middleware(function($request,$next){
             if (session('success')) {
                 Alert::success(session('success'));

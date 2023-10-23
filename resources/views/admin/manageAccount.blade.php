@@ -22,7 +22,7 @@
     </script>
 
     <script>
-        $(document).ready(function()  {
+        $(document).ready(function() {
             var table = $('.accountAdmin').DataTable({
                 processing: true,
                 serverSide: true,

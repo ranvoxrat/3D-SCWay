@@ -91,7 +91,7 @@
     </div>
     <!-- <button class="btnAdd" data-toggle="modal" data-target="#addHotspot"><i class="fa-solid fa-plus"></i></button> -->
     <div class="table-responsive  text-black" style="width:100%">
-<table id="example" class="table table-border align-middle sceneTable" style="width:100%">
+  <table id="example" class="table table-border align-middle sceneTable" style="width:100%">
         <thead class=" text-white bg-danger ">
             <tr class="align-center">
             <th>No.</th>

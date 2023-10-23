@@ -25,6 +25,8 @@ class SceneController extends Controller
    public function Welcome(){
     return view('welcome');
    }
+
+  
     public function dataScene(Request $request){
         if ($request->ajax()) {
             $data = Scene::select('*');

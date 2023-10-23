@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SceneSeeder::class);
         $this->call(HotspotSeeder::class);
         $this->call(Rooms::class);
+        $this->call(minimap::class);
     }
 }
