@@ -65,7 +65,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a class="page-scroll active" href="#home">Dashboard</a>
+                                        <a class="page-scroll active" href="#home">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#about">Start</a>
@@ -98,9 +98,9 @@
                                     <img class="fadeInUp" src="./assets/image/bulsu-logo.png" alt="bulsu" id="logo1">
                                     <img class="fadeInUp" src="./assets/image/logo.png" alt="bulsu" id="logo2">
                                 </div> -->
-                                <!-- <h2 class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Welcome To</h2>
-                                <h1 class="wow fadeInUp"><span>B</span>ulacan <span>S</span>tate <span>U</span>niversity</h1>
-                                <h3>Sarmiento Campus</h3> -->
+                                <h2 class="wow fadeInUp text-danger" data-wow-duration="1.3s" data-wow-delay="0.2s">Welcome To</h2>
+                                <h1 class="wow fadeInUp"><span>Bul</span>acan <span>S</span>tate <span>U</span>niversity</h1>
+                                <h3>Sarmiento Campus</h3>
                                 <!-- <img class="fadeInUp" src="./assets/image/vec.png" alt="bulsu" width="50%" height="70px" >            -->
                                 <!-- <img class="fadeInUp position-relative" src="./assets/image/welcome.png" alt="bulsu" id="logo1"> -->
                                  <p class="text-align-left wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
@@ -207,12 +207,10 @@
     <section id="portfolio" class="portfolio_area pt-120">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-60">
-                        <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Campus Building
-                        </h4>
-                        <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">Lorem ipsum dolor sit
-                            amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labor dolore.</p>
+                <div class="col-lg-12">
+                    <div class="section_title text-center p-2">
+                        <h2 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Campus Gallery</h2>
+                        <p class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s">Bulacan State University-Sarmiento Campus, a place where learning and opportunity converge. A campus that is dynamic and inclusive community where innovation, diversity, culture or research thrive.  From state of the art facilities to vibrant student life,we're excited to show you all that our campus has to offer."</p>
                     </div>
                 </div>
             </div>
@@ -282,7 +280,7 @@
                 </div>
             </div>
             <div class="single_portfolio wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                <img src="{{asset('img/369256732_691852536313414_2544957693081692163_n.jpg')}}" alt="portfolio">
+                <img src="{{asset('img/buildings/building.jpg')}}" alt="portfolio">
                 <div class="portfolio_content">
                     <ul class="meta">
                         <li><a href="#0"><i class="fa-solid fa-eye"></i></a></li>
@@ -311,8 +309,9 @@
                             <div class="single_testimonial text-center">
                                 <img src="{{asset('img/faces/mark.png')}}" alt="author">
                                 <h5 class="author_name">Mark Feliciano</h5>
-                                <span class="TitleAuthor">Front-end Developer / Graphics Designer</span>
-                                <p class="col-lg-12 p-5 text-center">I am a skilled programmer. I possess a deep understanding of various programming languages and frameworks.
+                                <span>Full-Stack Developer & Graphics Designer</span>
+                               <span class="d-block mt-4 fs-3"> <i class="fa-solid fa-quote-left text-danger"></i></span>
+                                <p class="col-lg-12 pt-2 pb-5 text-center ">I am a skilled programmer. I possess a deep understanding of various programming languages and frameworks.
                                      My problem-solving abilities are exceptional, allowing me to tackle complex coding challenges with ease.</p>
                                     <span class="iconMedia">
                                         <i class="fa-brands fa-facebook"></i>
@@ -327,8 +326,9 @@
                             <div class="single_testimonial text-center">
                                 <img src="{{asset('img/faces/leds4.png')}}" alt="author">
                                 <h5 class="author_name">Gerome R. Toledo</h5>
-                                <span class="TitleAuthor">Back-end Developer / 3D Graphics</span>
-                                <p class="col-lg-12 p-5 text-center">I am a junior programmer eager to learn and grow in the field of software development.
+                                <span>Back-end Developer / 3D Graphics</span>
+                                <span class="d-block mt-4 fs-3"> <i class="fa-solid fa-quote-left text-danger"></i></span>
+                                <p class="col-lg-12 pt-2 pb-5 text-center">I am a junior programmer eager to learn and grow in the field of software development.
                                 I have a solid foundation in programming concepts and have experience with a few programming languages.</p>
                                     <span class="iconMedia">
                                         <i class="fa-brands fa-facebook"></i>
@@ -344,6 +344,7 @@
                                 <img src="{{asset('img/faces/hanna.jpg')}}" alt="author">
                                 <h5 class="author_name">Princess Hanna C. Dorupa</h5>
                                 <span>Documentation and Photography</span>
+                                <span class="d-block mt-4 fs-3"> <i class="fa-solid fa-quote-left text-danger"></i></span>
                                 <p class="col-lg-12 p-5 text-center">I am an average leader who strives to inspire and guide my team towards success.
                                 I may not possess extraordinary leadership qualities, but I am dedicated to creating a positive and collaborative work environment.</p>
                                     <span class="iconMedia">
@@ -360,6 +361,7 @@
                                 <img src="{{asset('img/faces/kurt.jpg')}}" alt="author">
                                 <h5 class="author_name">Kurt Chester R. Veloso</h5>
                                 <span>Documentation and Photography</span>
+                                <span class="d-block mt-4 fs-3"> <i class="fa-solid fa-quote-left text-danger"></i></span>
                                 <p class="col-lg-12 p-5 text-center">I am an average 3D renderer with a decent understanding of 3D modeling and rendering techniques.
                                 I have experience working with various software and tools commonly used in the industry.</p>
                                     <span class="iconMedia">
@@ -376,6 +378,7 @@
                                 <img src="{{asset('img/faces/airah.jpg')}}" alt="author">
                                 <h5 class="author_name">Airah Mirabueno</h5>
                                 <span>Documentation and Photography</span>
+                                <span class="d-block mt-4 fs-3"> <i class="fa-solid fa-quote-left text-danger"></i></span>
                                 <p class="col-lg-12 p-5 text-center">I am an average typist with moderate typing speed and accuracy.
                                 I can comfortably type without looking at the keyboard and have a decent understanding of proper typing techniques.
                                  While I may not be the fastest typist, I am consistent and reliable in my typing abilities.</p>

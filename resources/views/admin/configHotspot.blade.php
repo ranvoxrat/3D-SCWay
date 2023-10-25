@@ -37,7 +37,11 @@
                 pageLength : 5,
                 lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'all']],
                 language: {
-                    url : '//cdn.datatables.net/plug-ins/1.10.10/api/fnAddDataAndDisplay.js'
+                    // url : '//cdn.datatables.net/plug-ins/1.10.10/api/fnAddDataAndDisplay.js',
+                    'paginate': {
+                          'previous': '<span><i class="fa-solid fa-angles-left"></i></span>',
+                           'next': '<span><i class="fa-solid fa-angles-right"></i></span>'
+                }
                 }
             });
         })(jQuery, jQuery.fn.dataTable);
@@ -63,7 +67,7 @@
                             return "<img style='height:50px;' src= 'img/uploads/" + data + "' />";
                         },
                         orderable: false,
-                        searchable: false
+                        searchable: true
                     },
                     {data: 'status', 
                         name: 'status',

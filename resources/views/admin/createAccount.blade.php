@@ -207,7 +207,7 @@
                             <div class="groupinput">
                                 <label for="password">Password</label>
                                 <input class="inputProfile border-top-0 border-start-0 border-end-0 text-center"
-                                    placeholder="Password" type="password" name="password" autocomplete="off" required>
+                                    placeholder="Password" type="text" name="password" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end col-lg col-md col-sm">

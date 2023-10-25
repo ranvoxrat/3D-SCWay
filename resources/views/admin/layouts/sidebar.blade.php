@@ -22,7 +22,7 @@
               <i class="fa-solid fa-house menu-icon"></i>
             </a>
           </li>
-          
+          @if(Auth::user()->type=="Admin")
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#Accounts" aria-expanded="false"
               aria-controls="Accounts">
@@ -53,19 +53,18 @@
             <div class="collapse" id="ManageAccounts">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item {{ Request::routeIs('adminAccount') ? 'active' : '' }}"> 
-                    <a class="nav-link" href="{{ route('adminAccount')}}">Admin</a>
+                    <a class="nav-link" href="{{ route('adminAccount')}}">Profile</a>
                   </li>
-                <li class="nav-item"> <a class="nav-link" href="">Staff</a>
-                </li>
               </ul>
             </div>    
           </li>
-          <li class="nav-item  {{ Request::routeIs('minimap') ? 'active' : '' }}">
+          @endif
+          <!-- <li class="nav-item  {{ Request::routeIs('minimap') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('minimap')}}">
               <span class="menu-title">Upload Campus Map</span>
               <i class="fa-solid fa-map menu-icon"></i>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#buidlings" aria-expanded="false"
               aria-controls="ManageAccounts">
@@ -75,7 +74,7 @@
             </a>
             <div class="collapse" id="buidlings">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item {{ Request::routeIs('uploadMinimap') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('uploadMinimap')}}">Campus Map</a></li>
+                <li class="nav-item {{ Request::routeIs('minimap') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('minimap')}}">Campus Map</a></li>
                 <li class="nav-item {{ Request::routeIs('config') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('config')}}">Scene</a></li>
                 <li class="nav-item {{ Request::routeIs('configHotspot') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('configHotspot')}}">hotspot</a></li>
               </ul>
@@ -83,9 +82,12 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               <span class="menu-title">Sign out</span>
               <i class="mdi mdi-arrow-right-bold menu-icon"></i>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                </form>
             </a>
           </li>
           </li>

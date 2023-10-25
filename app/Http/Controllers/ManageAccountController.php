@@ -10,6 +10,11 @@ use App\User;
 
 class ManageAccountController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
         $data=User::all();
         return view('admin.manageAccount',compact('data'));
@@ -29,15 +34,19 @@ class ManageAccountController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+             'fname'=>'required',
+             'lname'=>'required',
              'type'=>'required',
              'status' => 'required'
         ]);
 
         User::where('id', $id)->update([
+            'fname'=>$request['fname'],
+            'lname'=>$request['lname'],
             'type'=>$request['type'],
             'status' => $request['status']
         ]);
-        return redirect()->route('adminAccount')->with(['success' => 'Update Roles Successfully']);
+        return redirect()->route('adminAccount')->with(['success' => 'Update Account Successfully']);
     }
     public function show($id)
     {

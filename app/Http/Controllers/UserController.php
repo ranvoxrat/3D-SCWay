@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UpdateUserRequest;
 use App\User;
 
 class UserController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -27,15 +29,21 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateUserRequest $request, $id)
+     */public function update(Request $request)
     {
-        User::where('id', $id)->update([
-            'name'=>$request['name'],
-            'username'=>$request['username']
+        $request->validate([
+             'fname'=>'required',
+             'lname'=>'required',
+            
+        ]);
+
+        User::where('id', Auth::user()->id)->update([
+            'fname'=>$request['fname'],
+            'lname'=>$request['lname'],
+        
         ]);
         
-        return redirect()->route('profil')->with(['success' => 'Update Profile Success']);
+        return redirect()->route('profil')->with(['success' => 'Update Account Successfully']);
     }
 
     /**

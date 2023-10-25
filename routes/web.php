@@ -23,10 +23,11 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/addScenes', 'SceneController@addSceneCampus')->name('addScenes');
     Route::get('/addHotspots', 'HotspotController@addHotspt')->name('addHotspots');
-    Route::get('/Profile', 'CreateAccountController@index')->name('createAccountUser');
+    Route::get('/Profile', 'CreateAccountController@index')->name('createAccountUser')->middleware('checkrole'); //middleware
     Route::post('/createAccount', 'CreateAccountController@createAccount')->name('createAccount');
+    Route::put('/UpdateAccount', 'CreateAccountController@update')->name('UpdateAccount');
 
-    Route::get('/Account','ManageAccountController@index')->name('adminAccount');
+    Route::get('/Account','ManageAccountController@index')->name('adminAccount')->middleware('checkrole');// middlewae
     Route::get('/showprofile','ManageAccountController@showAccount')->name('adminAccountManage');
     Route::put('/setFScene/{id}', 'ManageAccountController@status')->name('accountprofile');
     Route::put('/EditProfileAdmins/{id}', 'ManageAccountController@update')->name('EditProfileAdmin');
@@ -34,8 +35,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::delete('/delProfile/{id}', 'ManageAccountController@destroy')->name('delProfile');
 
     Route::get('/profile', 'UserController@index')->name('profil');
-    Route::get('/changePass', 'PasswordController@index')->name('changePass');
-    Route::post('/changePass', 'PasswordController@store')->name('changePassword');
+    Route::get('/changePass', 'PasswordController@index')->name('changePass')->middleware('checkrole'); //middleware
+    Route::post('/changePass', 'PasswordController@store')->name('changePassword')->middleware('checkrole'); //middleware
 
     Route::get('/dataScene', 'SceneController@dataScene')->name('dataScene');
     Route::get('/dataHotspot', 'SceneController@dataHotspot')->name('dataHotspot');
@@ -43,6 +44,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/addScene', 'SceneController@store')->name('addScene');
 
     Route::get('/viewUpload', 'uploadMinimapController@index')->name('minimap');
+    Route::get('/showminimap', 'uploadMinimapController@showMinimap')->name('showMinimap');
     Route::post('/upload', 'uploadMinimapController@uploadMap')->name('uploadMinimap');
 
     Route::post('/addHotspot', 'HotspotController@store')->name('addHotspot');
@@ -52,7 +54,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::put('/editScene/{id}', 'SceneController@update')->name('editScene');
     Route::put('/editHotspot/{id}', 'HotspotController@update')->name('editHotspot');
-    Route::put('/editprofile/{id}', 'UserController@update')->name('editProfil');
+    Route::put('/editprofile', 'UserController@update')->name('editProfil');
 
     Route::get('/RegisterAccount','Auth/RegisterController.php@showRegistrationForm')->name('Register');
 

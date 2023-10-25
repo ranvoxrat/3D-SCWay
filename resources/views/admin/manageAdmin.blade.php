@@ -82,6 +82,14 @@
                         </div>
                         @endforeach
                     @endif
+                    <div class="d-flex flex-column text-black p-2">
+                        <label for="Firstname" class="m-0 position-relative fw-normal">Firstname</label>
+                        <input class="border-top-0 border-start-0 border-end-0 text-center" type="text" name="fname" value="{{$profile->fname}}" required>
+                    </div>
+                    <div class="d-flex flex-column text-black p-2">
+                        <label for="Lastname" class="m-0 position-relative fw-normal">Lastname</label>
+                        <input class="border-top-0 border-start-0 border-end-0 text-center" type="text" name="lname" value="{{$profile->lname}}" required>
+                    </div>
                     <div class="d-flex flex-column text-black mb-1 p-2">
                         <label for="status" class="m-0 position-relative fw-normal">Status</label>
                         <select class="border-top-0 border-start-0 border-end-0 text-center" name="status" required>
@@ -90,6 +98,7 @@
                                 <option @if($profile->status=="Inactive") selected  @endif value="Inactive">Inactive</option>
                         </select>
                     </div>
+                  
                     <div class="d-flex flex-column text-black mb-1 p-2">
                         <label for="status" class="m-0 position-relative fw-normal">Type</label>
                         <select class="border-top-0 border-start-0 border-end-0 text-center" name="type" required>

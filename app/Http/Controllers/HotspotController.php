@@ -9,8 +9,8 @@ class HotspotController extends Controller
 {
     public function index()
     {
-        $scene = Scene::all();
-        $hotspots = Hotspot::all();
+        $scene = Scene::paginate(10);;
+        $hotspots = Hotspot::paginate(10);;
         return view('admin.configHotspot', compact('scene','hotspots'));
     }
     /**
@@ -43,8 +43,8 @@ class HotspotController extends Controller
         return redirect()->route('configHotspot')->with('success', 'Hotspot Add Successfully');
     }
     public function addHotspt(){
-        $scene = Scene::all();
-        $hotspots = Hotspot::all();
+        $scene = Scene::paginate(10);;
+        $hotspots = Hotspot::paginate(10);;
         return view('admin.addHotspot', compact('hotspots', 'scene'));
     }
 
